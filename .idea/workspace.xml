@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/clocks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/requirements.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/union.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/graphics/displayable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/graphics/graphics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/ecs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/ecs/union.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +38,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Projects/Tundra/ecs/time.py" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -80,6 +91,14 @@
       <option name="presentableId" value="Default" />
       <updated>1567157207202</updated>
     </task>
+    <task id="LOCAL-00001" summary="Write helloworld">
+      <created>1567158066912</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567158066912</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,10 +106,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Write helloworld" />
+    <option name="LAST_COMMIT_MESSAGE" value="Write helloworld" />
   </component>
 </project>

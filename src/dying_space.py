@@ -1,8 +1,13 @@
-from tkinter import Tk, Label
+from src.ecs.clocks import Clocks
+from src.ecs.union import Entity
+from src.systems.graphics.graphics import Graphics
 
-if __name__ == '__main__':
-    root = Tk()
-    root.geometry("640x480")
-    root.title("Dying space")
-    Label(root, text="Hello, world!").pack()
-    root.mainloop()
+clocks = Clocks(
+    Graphics()
+)
+
+clocks.register_entity(
+    Entity(
+
+    )
+)
