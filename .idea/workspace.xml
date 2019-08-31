@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/testing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/ecs/requirements.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/union.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ecs/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/requirements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/testing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +43,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testing">
+  <component name="RunManager" selected="Python tests.Unittests for requirements.RequirementsTests.test_union_requirements_multiplication">
     <configuration name="testing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,7 +65,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for union.UnionTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for requirements.RequirementsTests.test_union_requirements_multiplication" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,7 +75,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;union.UnionTests&quot;" />
+      <option name="_new_target" value="&quot;requirements.RequirementsTests.test_union_requirements_multiplication&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -123,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for requirements.RequirementsTests.test_union_requirements_multiplication" />
         <item itemvalue="Python.testing" />
         <item itemvalue="Python tests.Unittests in tests" />
         <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_throws_error_when_components_have_common_attributes" />
         <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_throws_error_when_one_of_constructors_has_arguments" />
-        <item itemvalue="Python tests.Unittests for union.UnionTests" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567252849605</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Realize Union class">
+      <created>1567254748257</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1567254748257</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +182,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Write helloworld" />
     <MESSAGE value="Backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Backup" />
+    <MESSAGE value="Realize Union class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Realize Union class" />
   </component>
 </project>
