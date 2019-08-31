@@ -1,13 +1,19 @@
-class Entity:
+class Union:
+    class Error(Exception):
+        pass
+
     def __init__(self, *components):
-        self.__components = components
+        for c in components:
+            try:
+                c.__init__(self)
+            except TypeError:
+                raise Union.Error("Components' constructors should have no arguments")
 
-        for component in components:
-            name = type(component).__name__
-            setattr(self, name[0].lower() + name[1:], component)
+            for attribute in dir(c):
+                if attribute.startswith("__"):
+                    continue
 
-    def get_component(self, type_):
-        return next((c for c in self.__components if isinstance(c, type_)), None)
+                if hasattr(self, attribute):
+                    raise Union.Error(f"Components have common attribute {attribute}")
 
-    def has_component(self, type_):
-        return self.get_component(type_) is not None
+                setattr(self, attribute, getattr(c, attribute))
