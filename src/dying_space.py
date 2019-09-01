@@ -3,6 +3,7 @@ from src.ecs.union import Union
 from src.systems.graphics.circle_sprite import CircleSprite
 from src.systems.graphics.graphics import graphics
 from src.systems.graphics.tk_window import TkWindow
+from src.systems.physics.collision.collision import collision
 from src.systems.physics.constant_holder import ConstantHolder
 from src.systems.physics.gravity.gravity import gravity
 from src.systems.physics.gravity.massive import Massive
@@ -15,6 +16,7 @@ clocks = Clocks(
     graphics,
     inertia,
     gravity,
+    collision,
 )
 
 
@@ -36,7 +38,7 @@ ball = (
     CircleSprite(50),
     Positioned(Vector(320, 240)),
     Movable(),
-    Massive(10)
+    Massive(10),
 )
 
 create(TkWindow("Dying space", 640, 480))
