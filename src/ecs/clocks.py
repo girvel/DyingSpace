@@ -2,11 +2,12 @@ from time import time, sleep
 
 
 class Clocks:
+    ups = 50
+
     class EndGameError(Exception):
         pass
 
-    def __init__(self, *systems, ups=50):
-        self.ups = ups
+    def __init__(self, *systems):
         self.__systems = [] if systems is None else systems
 
     def register_entity(self, entity):
@@ -29,3 +30,7 @@ class Clocks:
                 sleep(max(0., 1 / self.ups - t))
         except Clocks.EndGameError:
             pass
+
+
+def delta_time():
+    return 1 / Clocks.ups

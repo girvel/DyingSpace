@@ -1,4 +1,6 @@
 class Vector:
+    zero = None
+
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -32,3 +34,9 @@ class Vector:
 
     def magnitude(self):
         return self.squared_magnitude() ** 0.5
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+
+Vector.zero = Vector(0, 0)

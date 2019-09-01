@@ -7,15 +7,15 @@ displayable = ("displayable" | has(method, "display"))
 display = ("display" | has(attribute, "canvas"))
 
 
-def pre_update(display):
+def clear(display):
     display.canvas.delete("all")
 
 
-def update(displayable, display):
+def put(displayable, display):
     displayable.display(display.canvas)
 
 
-def post_update(display):
+def update(display):
     display.canvas.update()
     try:
         display.canvas.update_idletasks()
@@ -24,7 +24,7 @@ def post_update(display):
 
 
 graphics = (
-    display >> pre_update,
-    displayable * display >> update,
-    display >> post_update,
+    display               >> clear,
+    displayable * display >> put,
+    display               >> update,
 )

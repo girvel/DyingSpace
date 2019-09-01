@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/placing/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/placing/positioned.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/placing/vector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/math.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/systems/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/inertion/inertia.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/inertion/movable.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/clocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/clocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/requirements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/union.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/displayable.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/circle_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/graphics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ecs/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ecs/requirements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ecs/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/placing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/placing/positioned.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/positioned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/placing/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/vector.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567271710232</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finally realize union-style ECS">
+      <created>1567331639722</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1567331639722</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,7 +211,8 @@
     <MESSAGE value="Backup" />
     <MESSAGE value="Realize Union class" />
     <MESSAGE value="Realize system's requirements description syntax" />
-    <option name="LAST_COMMIT_MESSAGE" value="Realize system's requirements description syntax" />
+    <MESSAGE value="Finally realize union-style ECS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally realize union-style ECS" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
