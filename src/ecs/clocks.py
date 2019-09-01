@@ -1,17 +1,31 @@
+from time import time, sleep
+
+
 class Clocks:
-    def __init__(self, systems=None):
+    class EndGameError(Exception):
+        pass
+
+    def __init__(self, *systems, ups=50):
+        self.ups = ups
         self.__systems = [] if systems is None else systems
 
     def register_entity(self, entity):
         for system in self.__systems:
-            for i, requirement in system.requirements:
-
-
-            # required_part = (entity.get_component(component_type) for component_type in system.requirements)
-            #
-            # if all(c is not None for c in required_part):
-            #     system.__subjects.append(required_part)
+            for i, pair in enumerate(system):
+                pair.try_add_subject(entity)
 
     def update(self):
         for system in self.__systems:
-            system.update()
+            for pair in system:
+                pair.execute()
+
+    def mainloop(self):
+        try:
+            while True:
+                t = time()
+                self.update()
+                t = time() - t
+
+                sleep(max(0., 1 / self.ups - t))
+        except Clocks.EndGameError:
+            pass

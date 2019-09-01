@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/ecs/requirements.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/placing/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/placing/positioned.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/placing/vector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/math.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/systems/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/clocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/clocks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ecs/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/requirements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/testing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/displayable.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/circle_sprite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/graphics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ecs/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ecs/requirements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ecs/union.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +55,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for requirements.RequirementsTests.test_union_requirements_multiplication">
+  <component name="RunManager" selected="Python.dying_space">
+    <configuration name="dying_space" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DyingSpace" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/dying_space.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="testing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,7 +98,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for requirements.RequirementsTests.test_union_requirements_multiplication" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for requirements.RequirementsTests.test_execution_pair_subjects_addition" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,11 +108,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;requirements.RequirementsTests.test_union_requirements_multiplication&quot;" />
+      <option name="_new_target" value="&quot;requirements.RequirementsTests.test_execution_pair_subjects_addition&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for union.UnionTests.test_union_throws_error_when_components_have_common_attributes" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for requirements.RequirementsTests.test_mul" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,11 +122,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;union.UnionTests.test_union_throws_error_when_components_have_common_attributes&quot;" />
+      <option name="_new_target" value="&quot;requirements.RequirementsTests.test_mul&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for union.UnionTests.test_union_throws_error_when_one_of_constructors_has_arguments" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for union.UnionTests.test_union_combines_methods" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -103,31 +136,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;union.UnionTests.test_union_throws_error_when_one_of_constructors_has_arguments&quot;" />
+      <option name="_new_target" value="&quot;union.UnionTests.test_union_combines_methods&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in tests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="DyingSpace" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for requirements.RequirementsTests.test_union_requirements_multiplication" />
+        <item itemvalue="Python.dying_space" />
+        <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_combines_methods" />
+        <item itemvalue="Python tests.Unittests for requirements.RequirementsTests.test_execution_pair_subjects_addition" />
+        <item itemvalue="Python tests.Unittests for requirements.RequirementsTests.test_mul" />
         <item itemvalue="Python.testing" />
-        <item itemvalue="Python tests.Unittests in tests" />
-        <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_throws_error_when_components_have_common_attributes" />
-        <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_throws_error_when_one_of_constructors_has_arguments" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567254748257</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Realize system's requirements description syntax">
+      <created>1567271710232</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1567271710232</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +209,14 @@
     <MESSAGE value="Write helloworld" />
     <MESSAGE value="Backup" />
     <MESSAGE value="Realize Union class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Realize Union class" />
+    <MESSAGE value="Realize system's requirements description syntax" />
+    <option name="LAST_COMMIT_MESSAGE" value="Realize system's requirements description syntax" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="system.caches[i]" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

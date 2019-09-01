@@ -15,26 +15,13 @@ class UnionTests(TestCase):
                 self.b = 13
 
         # act
-        union = Union(A, B)
+        union = Union(A(), B())
 
         # assert
         self.assertEqual(union.a, 12)
         self.assertEqual(union.b, 13)
 
-    def test_union_throws_error_when_one_of_constructors_has_arguments(self):
-        # arrange
-        class A:
-            def __init__(self):
-                self.a = 12
-
-        class B:
-            def __init__(self, b):
-                self.b = b
-
-        # assert
-        self.assertRaises(Union.Error, lambda: Union(A, B))
-
-    def test_union_throws_error_when_components_have_common_attributes(self):
+    def test_union_raises_error_when_components_have_common_attributes(self):
         # arrange
         class A:
             def a(self):
@@ -45,7 +32,24 @@ class UnionTests(TestCase):
                 pass
 
         # assert
-        self.assertRaises(Union.Error, lambda: Union(A, B))
+        self.assertRaises(Union.Error, lambda: Union(A(), B()))
+
+    def test_union_combines_methods(self):
+        # arrange
+        class A:
+            def __init__(self):
+                self.a = 10
+
+        class B:
+            def b(self): return self.a
+
+        union = Union(A(), B())
+
+        # act
+        v = union.b()
+
+        # assert
+        self.assertEqual(v, 10)
 
 
 if __name__ == '__main__':

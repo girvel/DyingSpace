@@ -4,16 +4,23 @@ class Union:
 
     def __init__(self, *components):
         for c in components:
-            try:
-                c.__init__(self)
-            except TypeError:
-                raise Union.Error("Components' constructors should have no arguments")
-
-            for attribute in dir(c):
-                if attribute.startswith("__"):
+            for attr_name in dir(c):
+                if attr_name.startswith("__"):
                     continue
 
-                if hasattr(self, attribute):
-                    raise Union.Error(f"Components have common attribute {attribute}")
+                attr_value = getattr(c, attr_name)
 
-                setattr(self, attribute, getattr(c, attribute))
+                if callable(attr_value):
+                    setattr(
+                        self,
+                        attr_name,
+                        (lambda method:
+                            lambda *args: method(self, *args)
+                         )(getattr(type(c), attr_name))
+                    )
+                    continue
+
+                if hasattr(self, attr_name):
+                    raise Union.Error(f"Components have common attribute {attr_name}")
+
+                setattr(self, attr_name, attr_value)

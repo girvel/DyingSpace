@@ -1,22 +1,30 @@
-from tkinter import Tk, Canvas, BOTH
+from _tkinter import TclError
 
+from src.ecs.clocks import Clocks
 from src.ecs.requirements import has, method, attribute
 
+displayable = ("displayable" | has(method, "display"))
+display = ("display" | has(attribute, "canvas"))
 
-class Graphics:
-    requirements = ("displayable" | has(method, "display") & has(method, "d")) \
-                   * ("displayer" | has(attribute, "canvas"))
 
-    def __init__(self):
-        self.subjects = []
+def pre_update(display):
+    display.canvas.delete("all")
 
-        root = Tk()
-        root.geometry("640x480")
-        root.title("Dying space")
 
-        self.canvas = Canvas(root)
-        self.canvas.pack(fill=BOTH, expand=1)
+def update(displayable, display):
+    displayable.display(display.canvas)
 
-    @staticmethod
-    def update(displayable, displayer):
-        displayable.display(displayer.canvas)
+
+def post_update(display):
+    display.canvas.update()
+    try:
+        display.canvas.update_idletasks()
+    except TclError:
+        raise Clocks.EndGameError
+
+
+graphics = (
+    display >> pre_update,
+    displayable * display >> update,
+    display >> post_update,
+)

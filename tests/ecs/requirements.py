@@ -1,6 +1,6 @@
 from unittest import TestCase, main
 
-from src.ecs.requirements import has, method, UnionRequirements
+from src.ecs.requirements import has, method, UnionRequirements, _Cache, mul, ExecutionPair
 
 
 class RequirementsTests(TestCase):
@@ -73,7 +73,91 @@ class RequirementsTests(TestCase):
         t = ur1 * ur1 * ur2
 
         # assert
-        self.assertEqual(t, (ur1, ur1, ur2))
+        self.assertEqual(t.tuple, (ur1, ur1, ur2))
+
+    def test_mul(self):
+        # arrange
+        c1 = _Cache("1", [1, 2, 3])
+        c2 = _Cache("2", [1])
+        c3 = _Cache("3", [4, 5])
+
+        # act
+        subjects = mul(c1, c2, c3)
+
+        # assert
+        self.assertListEqual(
+            subjects,
+            [
+                {"1": 1, "2": 1, "3": 4},
+                {"1": 1, "2": 1, "3": 5},
+                {"1": 2, "2": 1, "3": 4},
+                {"1": 2, "2": 1, "3": 5},
+                {"1": 3, "2": 1, "3": 4},
+                {"1": 3, "2": 1, "3": 5},
+            ]
+        )
+
+    def test_execution_pair_creation(self):
+        # arrange
+        ur = UnionRequirements()
+        def m(): pass
+
+        # act
+        ep = ur >> m
+
+        # assert
+        self.assertEqual(ep.requirements, (ur, ))
+        self.assertEqual(ep.action, m)
+
+    def test_execution_pair_subjects_addition(self):
+        # arrange
+        class A:
+            def a(self): pass
+
+        class B:
+            def b(self): pass
+
+        class C(A, B): pass
+
+        pair = ExecutionPair(
+            ("f" | has(method, "a")) * ("s" | has(method, "b")),
+            lambda f, s: None
+        )
+
+        a1 = A()
+        a2 = A()
+        b1 = B()
+
+        pair.subjects = [
+            {"f": a1, "s": b1},
+            {"f": a2, "s": b1},
+        ]
+        pair.caches = (
+            _Cache("f", [a1, a2]),
+            _Cache("s", [b1]),
+        )
+
+        a3 = A()
+        c = C()
+
+        # act
+        pair.try_add_subject(a3)
+        pair.try_add_subject(c)
+
+        # assert
+        self.assertListEqual(
+            pair.subjects,
+            [
+                {"f": a1, "s": b1},
+                {"f": a2, "s": b1},
+                {"f": a3, "s": b1},
+                {"f": c,  "s": b1},
+                {"f": a1, "s": c},
+                {"f": a2, "s": c},
+                {"f": a3, "s": c},
+                {"f": c,  "s": c},
+            ]
+        )
 
 
 if __name__ == '__main__':
