@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/physics/inertion/inertia.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/physics/inertion/movable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/constant_holder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/gravity/gravity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/gravity/massive.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/clocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/clocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/graphics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/placing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/placing/positioned.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/positioned.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/placing/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/vector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/vector.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567331639722</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add inertia">
+      <created>1567335635196</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1567335635196</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,13 +216,7 @@
     <MESSAGE value="Realize Union class" />
     <MESSAGE value="Realize system's requirements description syntax" />
     <MESSAGE value="Finally realize union-style ECS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally realize union-style ECS" />
-  </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="system.caches[i]" language="Python" />
-      </configuration>
-    </watches-manager>
+    <MESSAGE value="Add inertia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add inertia" />
   </component>
 </project>

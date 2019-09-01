@@ -29,6 +29,9 @@ class Vector:
     def __rmul__(self, other):
         return self * other
 
+    def __truediv__(self, other):
+        return self * (1 / other)
+
     def squared_magnitude(self):
         return self.x ** 2 + self.y ** 2
 
@@ -37,6 +40,9 @@ class Vector:
 
     def __eq__(self, other):
         return self.x == other.x and self.y == other.y
+
+    def __invert__(self):
+        return self / self.magnitude() if self != Vector.zero else Vector.zero
 
 
 Vector.zero = Vector(0, 0)
