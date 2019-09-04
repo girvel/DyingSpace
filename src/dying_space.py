@@ -1,7 +1,10 @@
+from tkinter import PhotoImage
+
 from src.ecs.clocks import Clocks, delta_time
 from src.ecs.union import Union
 from src.systems.graphics.circle_sprite import CircleSprite
 from src.systems.graphics.graphics import graphics
+from src.systems.graphics.image_sprite import ImageSprite
 from src.systems.graphics.tk_window import TkWindow
 from src.systems.physics.collision.collision import collision
 from src.systems.physics.constant_holder import ConstantHolder
@@ -41,17 +44,22 @@ ball = (
     Massive(10),
 )
 
-e = create(TkWindow("Dying space", 640, 480))
+display = create(TkWindow("Dying space", 640, 480))
 
 create(*ball)
-p = create(*ball).where(position=Vector(480, 240))
+p = create(
+    ImageSprite(PhotoImage(file="../assets/sprites/drilling_ship.gif")),
+    Positioned(Vector(480, 240)),
+    Movable(),
+    Massive(10),
+)
 
 
 def move_up(event):
     p.velocity += Vector(0, -10) * delta_time()
 
 
-e.bind_action('w', move_up)
+display.bind_action('w', move_up)
 
 create(ConstantHolder(G=1000))
 

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/collision.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/collision.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/gravity.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/gravity/gravity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/vector.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567629751871</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Make collision more realistic">
+      <created>1567630714814</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1567630714814</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,6 +244,7 @@
     <MESSAGE value="Implement gravity" />
     <MESSAGE value="Implement stopping circle collisions" />
     <MESSAGE value="Implement simple control" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement simple control" />
+    <MESSAGE value="Make collision more realistic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make collision more realistic" />
   </component>
 </project>
