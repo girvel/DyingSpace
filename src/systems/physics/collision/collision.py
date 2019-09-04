@@ -10,7 +10,7 @@ def stop_collisions(self, other):
 
     delta = other.position - self.position
     if delta.squared_magnitude() <= (self.radius + other.radius) ** 2:
-        self.velocity = Vector.zero
+        self.velocity = self.velocity.project(~delta)
         print("collision")
 
 

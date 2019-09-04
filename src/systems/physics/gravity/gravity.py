@@ -10,7 +10,7 @@ def accelerate(self, other, constants):
         return
 
     delta = other.position - self.position
-    self.velocity += ~delta * other.mass / delta.squared_magnitude() * constants.G * delta_time()
+    self.velocity += delta ** 0 * other.mass / delta.squared_magnitude() * constants.G * delta_time()
 
 
 massive = has(attribute, "mass") & has(attribute, "position") & has(attribute, "velocity")

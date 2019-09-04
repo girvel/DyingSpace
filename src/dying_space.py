@@ -1,4 +1,4 @@
-from src.ecs.clocks import Clocks
+from src.ecs.clocks import Clocks, delta_time
 from src.ecs.union import Union
 from src.systems.graphics.circle_sprite import CircleSprite
 from src.systems.graphics.graphics import graphics
@@ -48,10 +48,10 @@ p = create(*ball).where(position=Vector(480, 240))
 
 
 def move_up(event):
-    p.velocity = Vector(0, -10)
+    p.velocity += Vector(0, -10) * delta_time()
 
 
-e.bind_action('<w>', move_up)
+e.bind_action('w', move_up)
 
 create(ConstantHolder(G=1000))
 

@@ -4,7 +4,9 @@
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/collision.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/collision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/gravity.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/gravity/gravity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/vector.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567374900913</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implement simple control">
+      <created>1567629751871</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1567629751871</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,6 +238,7 @@
     <MESSAGE value="Add inertia" />
     <MESSAGE value="Implement gravity" />
     <MESSAGE value="Implement stopping circle collisions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement stopping circle collisions" />
+    <MESSAGE value="Implement simple control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement simple control" />
   </component>
 </project>
