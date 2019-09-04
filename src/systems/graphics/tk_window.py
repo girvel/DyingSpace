@@ -9,3 +9,6 @@ class TkWindow:
 
         self.canvas = Canvas(self.__root)
         self.canvas.pack(fill=BOTH, expand=1)
+
+    def bind_action(self, key, action):
+        self.__root.bind(key, action)

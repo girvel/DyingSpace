@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/physics/collision/collision.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567342567106</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implement stopping circle collisions">
+      <created>1567374900913</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1567374900913</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,6 +228,7 @@
     <MESSAGE value="Finally realize union-style ECS" />
     <MESSAGE value="Add inertia" />
     <MESSAGE value="Implement gravity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement gravity" />
+    <MESSAGE value="Implement stopping circle collisions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement stopping circle collisions" />
   </component>
 </project>

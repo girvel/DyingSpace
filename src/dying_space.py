@@ -41,12 +41,20 @@ ball = (
     Massive(10),
 )
 
-create(TkWindow("Dying space", 640, 480))
+e = create(TkWindow("Dying space", 640, 480))
 
 create(*ball)
-create(*ball).where(position=Vector(480, 240))
+p = create(*ball).where(position=Vector(480, 240))
+
+
+def move_up(event):
+    p.velocity = Vector(0, -10)
+
+
+e.bind_action('<w>', move_up)
 
 create(ConstantHolder(G=1000))
+
 
 if __name__ == '__main__':
     clocks.mainloop()
