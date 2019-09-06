@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/systems/debug/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/debug/fps_label.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/debug/fps_monitor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/drilling_ship.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/fast_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/clocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/clocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/union.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ecs/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/graphics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/collision.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/gravity.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/inertion/inertia.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -224,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567631839256</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add debug-mode fps label">
+      <created>1567775576418</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1567775576418</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,6 +266,7 @@
     <MESSAGE value="Implement simple control" />
     <MESSAGE value="Make collision more realistic" />
     <MESSAGE value="Add sprites" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add sprites" />
+    <MESSAGE value="Add debug-mode fps label" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add debug-mode fps label" />
   </component>
 </project>
