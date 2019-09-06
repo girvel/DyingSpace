@@ -12,3 +12,4 @@ class TkWindow:
 
     def bind_action(self, key, action):
         self.__root.bind(key, action)
+

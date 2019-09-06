@@ -10,6 +10,10 @@ class Union:
 
                 attr_value = getattr(c, attr_name)
 
+                if attr_name == 'union_init':
+                    attr_value(self)
+                    continue
+
                 if callable(attr_value):
                     setattr(
                         self,

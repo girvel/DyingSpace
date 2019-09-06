@@ -3,6 +3,7 @@ from time import time, sleep
 
 class Clocks:
     ups = 50
+    current_ups = 1
 
     class EndGameError(Exception):
         pass
@@ -27,10 +28,11 @@ class Clocks:
                 self.update()
                 t = time() - t
 
+                Clocks.current_ups = min(1 / t, self.ups)
                 sleep(max(0., 1 / self.ups - t))
         except Clocks.EndGameError:
             pass
 
 
 def delta_time():
-    return 1 / Clocks.ups
+    return 1 / Clocks.current_ups

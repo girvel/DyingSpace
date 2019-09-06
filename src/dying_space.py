@@ -2,6 +2,8 @@ from tkinter import PhotoImage
 
 from src.ecs.clocks import Clocks, delta_time
 from src.ecs.union import Union
+from src.systems.debug.fps_label import FpsLabel
+from src.systems.debug.fps_monitor import fps_monitor
 from src.systems.graphics.circle_sprite import CircleSprite
 from src.systems.graphics.graphics import graphics
 from src.systems.graphics.image_sprite import ImageSprite
@@ -15,13 +17,21 @@ from src.systems.physics.inertion.movable import Movable
 from src.systems.physics.positioned import Positioned
 from src.systems.physics.vector import Vector
 
+
+# Clocks initialization
+
 clocks = Clocks(
     graphics,
     inertia,
     gravity,
     collision,
+    *(() if not __debug__ else (
+        fps_monitor,
+    ))
 )
 
+
+# Union fast methods
 
 def create(*components):
     e = Union(*components)
@@ -37,6 +47,21 @@ def _where(self, **kw):
 
 Union.where = _where
 
+
+# UI
+
+display = create(
+    TkWindow("Dying space", 640, 480),
+    *(() if not __debug__ else (
+        FpsLabel(),
+    ))
+)
+
+
+# Game entities
+
+create(ConstantHolder(G=1000))
+
 ball = (
     CircleSprite(50),
     Positioned(Vector(320, 240)),
@@ -44,9 +69,11 @@ ball = (
     Massive(10),
 )
 
-display = create(TkWindow("Dying space", 640, 480))
-
 create(*ball)
+
+
+# Player
+
 p = create(
     ImageSprite(PhotoImage(file="../assets/sprites/drilling_ship.gif")),
     Positioned(Vector(480, 240)),
@@ -61,8 +88,8 @@ def move_up(event):
 
 display.bind_action('w', move_up)
 
-create(ConstantHolder(G=1000))
 
+# Game start
 
 if __name__ == '__main__':
     clocks.mainloop()

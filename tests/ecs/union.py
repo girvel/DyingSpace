@@ -51,6 +51,22 @@ class UnionTests(TestCase):
         # assert
         self.assertEqual(v, 10)
 
+    def test_union_calls_union_init(self):
+        # arrange
+        class A:
+            def __init__(self, a):
+                self.a = a
+
+            def union_init(self, union):
+                union.b = self.a ** 2
+
+        # act
+        union = Union(A(10))
+
+        # assert
+        self.assertFalse(hasattr(union, "union_init"))
+        self.assertEqual(union.b, 100)
+
 
 if __name__ == '__main__':
     main()
