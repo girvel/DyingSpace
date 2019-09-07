@@ -2,22 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/sprites/drilling_ship.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/fast_functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/drilling_ship_movement_source.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/rotated.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/traction/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/traction/tractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/graphics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/drilling_ship.gif" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/drilling_ship.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/physics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/collision.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/gravity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/inertion/inertia.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567775576418</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Encapsulate physics, change project structure">
+      <created>1567784992898</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1567784992898</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,6 +277,7 @@
     <MESSAGE value="Make collision more realistic" />
     <MESSAGE value="Add sprites" />
     <MESSAGE value="Add debug-mode fps label" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add debug-mode fps label" />
+    <MESSAGE value="Encapsulate physics, change project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Encapsulate physics, change project structure" />
   </component>
 </project>

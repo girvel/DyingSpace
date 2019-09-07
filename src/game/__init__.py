@@ -2,10 +2,10 @@ from tkinter import PhotoImage
 
 from src.ecs.clocks import Clocks, delta_time
 from src.ecs.union import Union
-from src.game import create
 from src.game.fast_functions import generate_create_function, generate_where
-from src.game.ui import display
+from src.systems.debug.fps_label import FpsLabel
 from src.systems.graphics.circle_sprite import CircleSprite
+from src.systems.graphics.tk_window import TkWindow
 from src.systems.physics import physics
 from src.systems.debug.fps_monitor import fps_monitor
 from src.systems.graphics import graphics
@@ -14,6 +14,7 @@ from src.systems.physics.constant_holder import ConstantHolder
 from src.systems.physics.gravity.massive import Massive
 from src.systems.physics.inertion.movable import Movable
 from src.systems.physics.positioned import Positioned
+from src.systems.physics.traction.tractor import Tractor
 from src.systems.physics.vector import Vector
 
 
@@ -34,6 +35,16 @@ create = generate_create_function(clocks)
 generate_where(Union)
 
 
+# UI
+
+display = create(
+    TkWindow("Dying space", 640, 480),
+    *(() if not __debug__ else (
+        FpsLabel(),
+    ))
+)
+
+
 # Game entities
 
 ball = (
@@ -51,15 +62,16 @@ create(*ball)
 # Player
 
 p = create(
-    ImageSprite(PhotoImage(file="../assets/sprites/drilling_ship.gif")),
+    ImageSprite("drilling_ship"),
     Positioned(Vector(480, 240)),
     Movable(),
     Massive(10),
+    Tractor(Vector(0, -1), 500),
 )
 
 
 def move_up(event):
-    p.velocity += Vector(0, -10) * delta_time()
+    p.traction_enabled ^= True
 
 
 display.bind_action('w', move_up)
