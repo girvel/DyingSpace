@@ -2,25 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/5.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/6.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/drilling_ship_movement_source.xcf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/physics/rotated.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/physics/traction/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/physics/traction/tractor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/limited.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tools/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tools/limited_tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/drilling_ship.gif" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/drilling_ship.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/ui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/math.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/animation/animated.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/systems/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/animation/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/testing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,31 +70,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for requirements.RequirementsTests.test_execution_pair_subjects_addition" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for limited_tests.LimitedTests.test_limited_to_proportion" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/ecs" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tools" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;requirements.RequirementsTests.test_execution_pair_subjects_addition&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for requirements.RequirementsTests.test_mul" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="DyingSpace" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/ecs" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;requirements.RequirementsTests.test_mul&quot;" />
+      <option name="_new_target" value="&quot;limited_tests.LimitedTests.test_limited_to_proportion&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -136,13 +112,27 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in limited_tests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="DyingSpace" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tools/limited_tests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.dying_space" />
+        <item itemvalue="Python tests.Unittests for limited_tests.LimitedTests.test_limited_to_proportion" />
+        <item itemvalue="Python tests.Unittests in limited_tests.py" />
         <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_calls_union_init" />
         <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_combines_methods" />
-        <item itemvalue="Python tests.Unittests for requirements.RequirementsTests.test_execution_pair_subjects_addition" />
-        <item itemvalue="Python tests.Unittests for requirements.RequirementsTests.test_mul" />
       </list>
     </recent_temporary>
   </component>
@@ -279,5 +269,12 @@
     <MESSAGE value="Add debug-mode fps label" />
     <MESSAGE value="Encapsulate physics, change project structure" />
     <option name="LAST_COMMIT_MESSAGE" value="Encapsulate physics, change project structure" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="animation_.time.to_proportion() * len(animation_.sprites)" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

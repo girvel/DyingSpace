@@ -1,9 +1,9 @@
-from tkinter import PhotoImage
-
-from src.ecs.clocks import Clocks, delta_time
+from src.ecs.clocks import Clocks
 from src.ecs.union import Union
 from src.game.fast_functions import generate_create_function, generate_where
 from src.systems.debug.fps_label import FpsLabel
+from src.systems.graphics.animation import Animation
+from src.systems.graphics.animation.animated import Animated
 from src.systems.graphics.circle_sprite import CircleSprite
 from src.systems.graphics.tk_window import TkWindow
 from src.systems.physics import physics
@@ -38,7 +38,7 @@ generate_where(Union)
 # UI
 
 display = create(
-    TkWindow("Dying space", 640, 480),
+    TkWindow("Dying space", 640, 1080),
     *(() if not __debug__ else (
         FpsLabel(),
     ))
@@ -63,10 +63,13 @@ create(*ball)
 
 p = create(
     ImageSprite("drilling_ship"),
-    Positioned(Vector(480, 240)),
+    Positioned(Vector(480, 1000)),
     Movable(),
     Massive(10),
     Tractor(Vector(0, -1), 500),
+    Animated(
+        {(lambda self: self.traction_enabled): Animation("drilling_ship/movement", 3)}
+    )
 )
 
 

@@ -2,6 +2,7 @@ from _tkinter import TclError
 
 from src.ecs.clocks import Clocks
 from src.ecs.requirements import has, method, attribute
+from src.systems.graphics.animation import animation
 
 displayable = ("displayable" | has(method, "display"))
 display = ("display" | has(attribute, "canvas"))
@@ -24,6 +25,7 @@ def update(display):
 
 
 graphics = (
+    *animation,
     display               >> clear,
     displayable * display >> put,
     display               >> update,
