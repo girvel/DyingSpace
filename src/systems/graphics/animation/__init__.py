@@ -1,6 +1,7 @@
 import os
 from math import floor
-from tkinter import PhotoImage
+
+from PIL import Image
 
 from src.ecs.clocks import delta_time
 from src.ecs.requirements import attribute, has
@@ -12,8 +13,8 @@ class Animation:
 
     def __init__(self, name, length):
         self.sprites = [
-            PhotoImage(file=f'{self.PATH}/{name}/{p}')
-            for p in sorted(os.listdir(f'{self.PATH}/{name}')) if p.endswith(".gif")
+            Image.open(f'{self.PATH}/{name}/{p}')
+            for p in sorted(os.listdir(f'{self.PATH}/{name}')) if p.endswith(".png")
         ]
         self.time = Limited(0, max_value=length, min_value=0)
 

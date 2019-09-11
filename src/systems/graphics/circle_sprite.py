@@ -7,5 +7,6 @@ class CircleSprite:
             self.position.x - self.radius,
             self.position.y - self.radius,
             self.position.x + self.radius,
-            self.position.y + self.radius
+            self.position.y + self.radius,
+            fill='white'
         )

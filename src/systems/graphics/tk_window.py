@@ -7,7 +7,7 @@ class TkWindow:
         self.__root.title(title)
         self.__root.geometry(f'{w}x{h}')
 
-        self.canvas = Canvas(self.__root)
+        self.canvas = Canvas(self.__root, background='black')
         self.canvas.pack(fill=BOTH, expand=1)
 
     def bind_action(self, key, action):

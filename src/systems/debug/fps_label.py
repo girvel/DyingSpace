@@ -10,4 +10,4 @@ class FpsLabel:
         union.fps_label.place(x=0, y=0)
 
     def update_fps(self):
-        self.fps_label.configure(text=str(1 / delta_time()))
+        self.fps_label.configure(text=str(round(1 / delta_time(), 2)))

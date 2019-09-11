@@ -1,3 +1,6 @@
+from math import cos, sin, pi
+
+
 class Vector:
     zero = None
 
@@ -54,6 +57,14 @@ class Vector:
 
     def project(self, other):
         return self * other / abs(other) * self ** 0
+
+    def rotated(self, angle):
+        cs = cos(angle)
+        sn = sin(angle)
+
+        return Vector(
+            self.x * cs - self.y * sn,
+            self.x * sn + self.y * cs)
 
 
 Vector.zero = Vector(0, 0)
