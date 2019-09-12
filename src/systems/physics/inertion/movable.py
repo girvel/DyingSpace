@@ -1,4 +1,4 @@
-from src.systems.physics.vector import Vector
+from src.tools.vector import Vector
 
 
 class Movable:

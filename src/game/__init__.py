@@ -19,7 +19,7 @@ from src.systems.physics.inertion.movable import Movable
 from src.systems.physics.positioned import Positioned
 from src.systems.physics.rotated import Rotated
 from src.systems.physics.traction.tractor import Tractor
-from src.systems.physics.vector import Vector
+from src.tools.vector import Vector
 
 
 # Clocks initialization
@@ -51,26 +51,26 @@ display = create(
 
 # Game entities
 
-ball = (
-    CircleSprite(50),
+planet = (
+    CircleSprite(300),
     Positioned(Vector(320, 240)),
     Movable(),
-    Massive(10),
+    Massive(1e8),
 )
 
-create(ConstantHolder(G=1000))
+create(ConstantHolder(G=1e-3))
 
-create(*ball)
+create(*planet)
 
 
 # Player
 
 p = create(
     ImageSprite("drilling_ship"),
-    Positioned(Vector(480, 240)),
+    Positioned(Vector(480, 840)),
     Movable(),
-    Massive(10),
-    Tractor(Vector(0, -1), 100),
+    Massive(1e4),
+    Tractor(Vector(0, -1), 1e5),
     CircleCollider(25),
     Animated(
         {(lambda self: self.traction_enabled): Animation("drilling_ship/movement", 1.5)}
@@ -91,7 +91,7 @@ def rotate(dir):
 
 display.bind_action('w', lambda e: traction_set(True))
 display.bind_action('s', lambda e: traction_set(False))
-display.bind_action('a', lambda e: rotate(1))
-display.bind_action('d', lambda e: rotate(-1))
+display.bind_action('a', lambda e: rotate(-1))
+display.bind_action('d', lambda e: rotate(1))
 
 

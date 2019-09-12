@@ -6,6 +6,6 @@ from src.systems.physics.traction import traction
 physics = (
     *inertia,
     *gravity,
-    *collision,
     *traction,
+    *collision,
 )
