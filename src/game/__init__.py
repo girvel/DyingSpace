@@ -1,6 +1,7 @@
 from math import pi
 
 from src.ecs.clocks import Clocks, delta_time
+from src.game.default_data_collector import DefaultDataCollector
 from src.game.fast_functions import generate_create_function
 from src.systems.debug.fps_label import FpsLabel
 from src.systems.gameplay.navigation.named import Named
@@ -80,6 +81,7 @@ p = create(
     Rotated(0),
     Navigated(planet),
     Durable(5e7),
+    DefaultDataCollector()
 )
 
 display.player = p
@@ -98,5 +100,3 @@ display.bind_action('w', lambda e: traction_set(True))
 display.bind_action('s', lambda e: traction_set(False))
 display.bind_action('a', lambda e: rotate(-1))
 display.bind_action('d', lambda e: rotate(1))
-
-

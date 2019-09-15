@@ -4,40 +4,14 @@ from src.ecs.requirements import has, attribute
 from src.tools.vector import Vector
 
 
-def distance_vector(from_, to):
-    result = to.position - from_.position
-
-    if hasattr(from_, "radius"):
-        result *= (1 - from_.radius / abs(result))
-
-    if hasattr(to, "radius"):
-        result *= (1 - to.radius / abs(result))
-
-    return result
-
-
 def display_info(window, holder):
     UI_POSITION = Vector(20, 20)
     DISPLAY_SIZE = Vector(100, 100)
     DISPLAY_CENTER = UI_POSITION + DISPLAY_SIZE / 2
 
     player = holder.player
-    target = player.navigation_target
 
-    combined_data = (
-        (player.velocity / 1000, "speed", "lightgreen", "km/s"),
-        (distance_vector(player, target) / 1000, "distance_to_target", "red", "km"),
-    )
-
-    numeric_data = (
-        (player.mass / 1000, "mass", "green", "tn"),
-        (player.traction_force / 1000, "traction_force", "green", "kN"),
-        (player.durability / 1e6, "durability", "green", "M"),
-    )
-
-    string_data = (
-        (target.name if hasattr(target, "name") else "<unknown>", "target", "red", ""),
-    )
+    combined_data = player.get_combined_data()
 
     vectors = tuple(
         (data[0], data[2]) for data in combined_data
@@ -45,9 +19,9 @@ def display_info(window, holder):
 
     numerics = tuple(
         (abs(data[0]), ) + data[1:] for data in combined_data
-    ) + numeric_data
+    ) + player.get_numeric_data()
 
-    strings = string_data + tuple(
+    strings = player.get_string_data() + tuple(
         (str(round(d[0], 2)), ) + d[1:] for d in numerics
     )
 

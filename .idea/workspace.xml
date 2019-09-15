@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/navigation/named.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/default_data_collector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/physics/tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" afterDir="false" />
@@ -138,10 +139,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.dying_space" />
+        <item itemvalue="Python.counter" />
         <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_combines_methods" />
         <item itemvalue="Python tests.Unittests for vector.VectorTests.test_project" />
         <item itemvalue="Python tests.Unittests for vector.VectorTests.test_project_1" />
-        <item itemvalue="Python.counter" />
       </list>
     </recent_temporary>
   </component>
@@ -303,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568570798871</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add names">
+      <created>1568571470266</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1568571470266</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -342,7 +350,8 @@
     <MESSAGE value="Add destruction by movement energy" />
     <MESSAGE value="Encapsulate tkinter" />
     <MESSAGE value="Refactor UI (a bit)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor UI (a bit)" />
+    <MESSAGE value="Add names" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add names" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
