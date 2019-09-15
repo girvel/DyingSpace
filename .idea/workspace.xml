@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/navigation/named.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/circle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/vector.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -301,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568568877531</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Refactor UI (a bit)">
+      <created>1568570798871</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1568570798871</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -339,7 +341,8 @@
     <MESSAGE value="Implement entities dynamic creation &amp; destruction" />
     <MESSAGE value="Add destruction by movement energy" />
     <MESSAGE value="Encapsulate tkinter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Encapsulate tkinter" />
+    <MESSAGE value="Refactor UI (a bit)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor UI (a bit)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

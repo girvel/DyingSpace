@@ -21,24 +21,35 @@ def display_info(window, holder):
     DISPLAY_SIZE = Vector(100, 100)
     DISPLAY_CENTER = UI_POSITION + DISPLAY_SIZE / 2
 
+    player = holder.player
+    target = player.navigation_target
+
     combined_data = (
-        (holder.player.velocity / 1000, "speed", "lightgreen", "km/s"),
-        (distance_vector(holder.player, holder.player.navigation_target) / 1000, "distance_to_target", "red", "km"),
+        (player.velocity / 1000, "speed", "lightgreen", "km/s"),
+        (distance_vector(player, target) / 1000, "distance_to_target", "red", "km"),
     )
 
-    integer_data = (
-        (holder.player.mass / 1000, "mass", "green", "tn"),
-        (holder.player.traction_force / 1000, "traction_force", "green", "kN"),
-        (holder.player.durability, "durability", "green", "")
+    numeric_data = (
+        (player.mass / 1000, "mass", "green", "tn"),
+        (player.traction_force / 1000, "traction_force", "green", "kN"),
+        (player.durability / 1e6, "durability", "green", "M"),
+    )
+
+    string_data = (
+        (target.name if hasattr(target, "name") else "<unknown>", "target", "red", ""),
     )
 
     vectors = tuple(
         (data[0], data[2]) for data in combined_data
     )
 
-    integers = tuple(
+    numerics = tuple(
         (abs(data[0]), ) + data[1:] for data in combined_data
-    ) + integer_data
+    ) + numeric_data
+
+    strings = string_data + tuple(
+        (str(round(d[0], 2)), ) + d[1:] for d in numerics
+    )
 
     window.create_rectangle(
         UI_POSITION, DISPLAY_SIZE,
@@ -56,9 +67,9 @@ def display_info(window, holder):
         )
 
     p = UI_POSITION + (DISPLAY_SIZE.y + 30) * Vector.down
-    for d in integers:
+    for d in strings:
         window.create_text(
-            p, f'${d[1].upper()}={round(d[0], 2)} {d[3]}',
+            p, f'${d[1].upper()}={d[0]} {d[3]}',
             fill=d[2],
             relative=False,
         )

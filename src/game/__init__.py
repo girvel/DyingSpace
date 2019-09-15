@@ -3,6 +3,7 @@ from math import pi
 from src.ecs.clocks import Clocks, delta_time
 from src.game.fast_functions import generate_create_function
 from src.systems.debug.fps_label import FpsLabel
+from src.systems.gameplay.navigation.named import Named
 from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.graphics.animation import Animation
 from src.systems.graphics.animation.animated import Animated
@@ -58,15 +59,8 @@ planet = create(
     Positioned(Vector(320, 240)),
     Movable(),
     Massive(1e8),
+    Named("A001-01: snowball"),
 )
-
-planet2 = create(
-    CircleSprite(30),
-    Positioned(Vector(320, 10000)),
-    Movable(),
-)
-
-clocks.destructor.clocks_destruction_list.append(planet2)
 
 create(ConstantHolder(G=1e-3))
 
@@ -85,7 +79,7 @@ p = create(
     ),
     Rotated(0),
     Navigated(planet),
-    Durable(5e7)
+    Durable(5e7),
 )
 
 display.player = p
