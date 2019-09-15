@@ -19,7 +19,7 @@ class Union:
                         self,
                         attr_name,
                         (lambda method:
-                            lambda *args: method(self, *args)
+                            lambda *args, **kw: method(self, *args, **kw)
                          )(getattr(type(c), attr_name))
                     )
                     continue

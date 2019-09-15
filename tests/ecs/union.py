@@ -41,12 +41,12 @@ class UnionTests(TestCase):
                 self.a = 10
 
         class B:
-            def b(self): return self.a
+            def b(self, a, b=3): return self.a
 
         union = Union(A(), B())
 
         # act
-        v = union.b()
+        v = union.b(1, b=2)
 
         # assert
         self.assertEqual(v, 10)

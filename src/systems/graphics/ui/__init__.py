@@ -62,6 +62,7 @@ def display_info(window, holder):
             text=f'${d[1].upper()}={round(d[0], 2)} {d[3]}',
             fill=d[2],
             anchor=W,
+            font="Consolas 10"
         )
         y += 20
 

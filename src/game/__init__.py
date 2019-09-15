@@ -75,7 +75,7 @@ create(ConstantHolder(G=1e-3))
 
 p = create(
     ImageSprite("drilling_ship"),
-    Positioned(Vector(480, 10000)),
+    Positioned(Vector(480, 800)),
     Movable(),
     Massive(1e4),
     Tractor(Vector(0, -1), 1e5),

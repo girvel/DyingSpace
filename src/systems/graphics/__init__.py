@@ -6,7 +6,7 @@ from src.systems.graphics.animation import animation
 from src.systems.graphics.ui import ui
 
 displayable = ("displayable" | has(method, "display"))
-display = ("display" | has(attribute, "canvas"))
+display = ("display" | has(method, "create_image") & has(method, "create_circle"))
 
 
 def clear(display):
@@ -15,7 +15,7 @@ def clear(display):
 
 
 def put(displayable, display):
-    displayable.display(display.canvas, display.camera_position)
+    displayable.display(display)
 
 
 def update(display):
