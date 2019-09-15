@@ -50,6 +50,8 @@ class Vector:
     def __pow__(self, power, modulo=None):
         if power == 0:
             return self / abs(self) if self != Vector.zero else Vector.zero
+        if power % 2 == 0:
+            return abs(self) ** power
         raise Exception
 
     def __invert__(self):

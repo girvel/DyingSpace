@@ -29,6 +29,7 @@ def display_info(window, holder):
     integer_data = (
         (holder.player.mass / 1000, "mass", "green", "tn"),
         (holder.player.traction_force / 1000, "traction_force", "green", "kN"),
+        (holder.player.durability, "durability", "green", "")
     )
 
     vectors = tuple(

@@ -15,6 +15,7 @@ from src.systems.graphics import graphics
 from src.systems.graphics.image_sprite import ImageSprite
 from src.systems.physics.collision.circle_collider import CircleCollider
 from src.systems.physics.constant_holder import ConstantHolder
+from src.systems.physics.durability.durable import Durable
 from src.systems.physics.gravity.massive import Massive
 from src.systems.physics.inertion.movable import Movable
 from src.systems.physics.positioned import Positioned
@@ -84,6 +85,7 @@ p = create(
     ),
     Rotated(0),
     Navigated(planet),
+    Durable(5e7)
 )
 
 display.player = p
