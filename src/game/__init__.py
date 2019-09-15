@@ -3,6 +3,7 @@ from math import pi
 from src.ecs.clocks import Clocks, delta_time
 from src.game.fast_functions import generate_create_function
 from src.systems.debug.fps_label import FpsLabel
+from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.graphics.animation import Animation
 from src.systems.graphics.animation.animated import Animated
 from src.systems.graphics.circle_sprite import CircleSprite
@@ -51,7 +52,7 @@ display = create(
 
 # Game entities
 
-planet = (
+planet = create(
     CircleSprite(300),
     Positioned(Vector(320, 240)),
     Movable(),
@@ -60,14 +61,12 @@ planet = (
 
 create(ConstantHolder(G=1e-3))
 
-create(*planet)
-
 
 # Player
 
 p = create(
     ImageSprite("drilling_ship"),
-    Positioned(Vector(480, 700)),
+    Positioned(Vector(480, 10000)),
     Movable(),
     Massive(1e4),
     Tractor(Vector(0, -1), 1e5),
@@ -76,6 +75,7 @@ p = create(
         {(lambda self: self.traction_enabled): Animation("drilling_ship/movement", 1.5)}
     ),
     Rotated(0),
+    Navigated(planet),
 )
 
 display.player = p

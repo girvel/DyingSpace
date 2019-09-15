@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/navigation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/navigation/navigated.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/circle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/circle_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -262,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568205968622</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add ugly camera">
+      <created>1568547346831</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1568547346831</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,7 +302,8 @@
     <MESSAGE value="Encapsulate physics, change project structure" />
     <MESSAGE value="Realize simple animations" />
     <MESSAGE value="Repaint background, implement rotation, spaceship collider etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Repaint background, implement rotation, spaceship collider etc" />
+    <MESSAGE value="Add ugly camera" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ugly camera" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
