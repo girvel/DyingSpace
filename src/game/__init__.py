@@ -41,7 +41,7 @@ create = generate_create_function(clocks)
 # UI
 
 display = create(
-    TkWindow("Dying space", 640, 1080),
+    TkWindow("Dying space", Vector(1024, 768)),
     PlayerUi(None),
     *(() if not __debug__ else (
         FpsLabel(),
@@ -67,7 +67,7 @@ create(*planet)
 
 p = create(
     ImageSprite("drilling_ship"),
-    Positioned(Vector(480, 840)),
+    Positioned(Vector(480, 700)),
     Movable(),
     Massive(1e4),
     Tractor(Vector(0, -1), 1e5),
@@ -79,6 +79,7 @@ p = create(
 )
 
 display.player = p
+display.camera_target = p
 
 
 def traction_set(value):

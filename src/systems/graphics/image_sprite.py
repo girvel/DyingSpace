@@ -8,7 +8,7 @@ class ImageSprite:
         self.sprite = Image.open(f'../assets/sprites/{name}.gif') if name else None
         self.tkinter_sprite = ImageTk.PhotoImage(self.sprite)
 
-    def display(self, canvas):
+    def display(self, canvas, d):
         self.tkinter_sprite = ImageTk.PhotoImage(
             self.sprite.rotate(
                 0 if not hasattr(self, "rotation") else -degrees(self.rotation),
@@ -16,8 +16,8 @@ class ImageSprite:
             )
         )
 
+        p = self.position - d
         canvas.create_image(
-            self.position.x,
-            self.position.y,
+            p.x, p.y,
             image=self.tkinter_sprite,
         )

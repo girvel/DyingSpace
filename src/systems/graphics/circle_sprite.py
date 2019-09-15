@@ -2,11 +2,12 @@ class CircleSprite:
     def __init__(self, radius):
         self.radius = radius
 
-    def display(self, canvas):
+    def display(self, canvas, d):
+        p = self.position - d
         canvas.create_oval(
-            self.position.x - self.radius,
-            self.position.y - self.radius,
-            self.position.x + self.radius,
-            self.position.y + self.radius,
+            p.x - self.radius,
+            p.y - self.radius,
+            p.x + self.radius,
+            p.y + self.radius,
             fill='white'
         )

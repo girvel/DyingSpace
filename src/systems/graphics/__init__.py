@@ -11,10 +11,11 @@ display = ("display" | has(attribute, "canvas"))
 
 def clear(display):
     display.canvas.delete("all")
+    display.camera_position = display.camera_target.position - display.size / 2
 
 
 def put(displayable, display):
-    displayable.display(display.canvas)
+    displayable.display(display.canvas, display.camera_position)
 
 
 def update(display):

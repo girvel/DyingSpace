@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/tools/vector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/inertion/movable.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/inertion/movable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/vector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tools/limited_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tools/limited.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/circle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/circle_sprite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/image_sprite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
