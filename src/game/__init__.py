@@ -6,13 +6,13 @@ from src.systems.debug.fps_label import FpsLabel
 from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.graphics.animation import Animation
 from src.systems.graphics.animation.animated import Animated
-from src.systems.graphics.circle_sprite import CircleSprite
+from src.systems.graphics.sprites.circle_sprite import CircleSprite
 from src.systems.graphics.tk_window import TkWindow
 from src.systems.graphics.ui.player_ui import PlayerUi
 from src.systems.physics import physics
 from src.systems.debug.fps_monitor import fps_monitor
 from src.systems.graphics import graphics
-from src.systems.graphics.image_sprite import ImageSprite
+from src.systems.graphics.sprites.image_sprite import ImageSprite
 from src.systems.physics.collision.circle_collider import CircleCollider
 from src.systems.physics.constant_holder import ConstantHolder
 from src.systems.physics.durability.durable import Durable

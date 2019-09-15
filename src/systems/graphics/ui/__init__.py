@@ -40,31 +40,29 @@ def display_info(window, holder):
         (abs(data[0]), ) + data[1:] for data in combined_data
     ) + integer_data
 
-    window.canvas.create_rectangle(
-        UI_POSITION.x, UI_POSITION.y,
-        UI_POSITION.x + DISPLAY_SIZE.x, UI_POSITION.y + DISPLAY_SIZE.y,
-        outline='lightgreen',
+    window.create_rectangle(
+        UI_POSITION, DISPLAY_SIZE,
+        border='lightgreen',
+        relative=False,
     )
 
     for d in vectors:
         v = d[0] ** 0 * 40
-        window.canvas.create_line(
-            DISPLAY_CENTER.x,       DISPLAY_CENTER.y,
-            DISPLAY_CENTER.x + v.x, DISPLAY_CENTER.y + v.y,
+        window.create_line(
+            DISPLAY_CENTER, v,
             fill=d[1],
             arrow=LAST,
+            relative=False,
         )
 
-    y = UI_POSITION.y + DISPLAY_SIZE.y + 30
+    p = UI_POSITION + (DISPLAY_SIZE.y + 30) * Vector.down
     for d in integers:
-        window.canvas.create_text(
-            UI_POSITION.x, y,
-            text=f'${d[1].upper()}={round(d[0], 2)} {d[3]}',
+        window.create_text(
+            p, f'${d[1].upper()}={round(d[0], 2)} {d[3]}',
             fill=d[2],
-            anchor=W,
-            font="Consolas 10"
+            relative=False,
         )
-        y += 20
+        p += 20 * Vector.down
 
 
 ui = (

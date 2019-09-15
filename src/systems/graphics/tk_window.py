@@ -1,4 +1,4 @@
-from tkinter import Tk, Canvas, BOTH
+from tkinter import Tk, Canvas, BOTH, W
 
 from PIL import ImageTk
 
@@ -36,6 +36,43 @@ class TkWindow:
             position.x + radius,
             position.y + radius,
             fill=fill
+        )
+
+    def create_rectangle(self, position, size, relative=True, border='white'):
+        if relative:
+            position -= self.camera_position
+
+        end = position + size
+        self.canvas.create_rectangle(
+            position.x,
+            position.y,
+            end.x,
+            end.y,
+            outline=border
+        )
+
+    def create_line(self, position, size, relative=True, fill='white', arrow=None):
+        if relative:
+            position -= self.camera_position
+
+        end = position + size
+        self.canvas.create_line(
+            position.x, position.y,
+            end.x, end.y,
+            fill=fill,
+            arrow=arrow,
+        )
+
+    def create_text(self, position, text, relative=True, fill='white', anchor=W, font="Consolas 10"):
+        if relative:
+            position -= self.camera_position
+
+        self.canvas.create_text(
+            position.x, position.y,
+            text=text,
+            fill=fill,
+            anchor=anchor,
+            font=font
         )
 
     def bind_action(self, key, action):
