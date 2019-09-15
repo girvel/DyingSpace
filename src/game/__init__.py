@@ -59,6 +59,14 @@ planet = create(
     Massive(1e8),
 )
 
+planet2 = create(
+    CircleSprite(30),
+    Positioned(Vector(320, 10000)),
+    Movable(),
+)
+
+clocks.destructor.clocks_destruction_list.append(planet2)
+
 create(ConstantHolder(G=1e-3))
 
 

@@ -120,6 +120,17 @@ class ExecutionPair:
 
             self.caches[i].collection.append(subject)
 
+    def try_remove_subject(self, subject):
+        for i, req in enumerate(self.requirements):
+            match = req.match(subject)
+
+            if not match:
+                continue
+
+            if subject in self.caches[i].collection:
+                self.caches[i].collection.remove(subject)
+                self.subjects = [s for s in self.subjects if all(v != subject for k, v in s.items())]
+
     def execute(self):
         for s in self.subjects:
             self.action(**s)

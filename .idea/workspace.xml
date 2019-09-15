@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/navigation/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/navigation/navigated.py" afterDir="false" />
+    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Improve default UI">
+      <change afterPath="$PROJECT_DIR$/src/ecs/special_entities/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/special_entities/creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ecs/special_entities/destruction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/clocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/clocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/requirements.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" afterDir="false" />
     </list>
@@ -269,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568547346831</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Improve default UI">
+      <created>1568555192765</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1568555192765</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -303,13 +312,24 @@
     <MESSAGE value="Realize simple animations" />
     <MESSAGE value="Repaint background, implement rotation, spaceship collider etc" />
     <MESSAGE value="Add ugly camera" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ugly camera" />
+    <MESSAGE value="Improve default UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve default UI" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="i==2 and len(system) == 5" language="Python" />
+          <url>file://$PROJECT_DIR$/src/ecs/clocks.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="self.velocity" language="Python" />
-        <watch expression="self.velocity.project(~delta)" language="Python" />
+        <watch expression="[s for s in self.subjects for k, v in s.items() if v != subject]" language="Python" />
+        <watch expression="self.subjects" language="Python" />
       </configuration>
     </watches-manager>
   </component>

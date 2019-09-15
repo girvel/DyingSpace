@@ -1,4 +1,4 @@
-from tkinter import LAST, LEFT, W
+from tkinter import LAST, W
 
 from src.ecs.requirements import has, attribute
 from src.tools.vector import Vector
@@ -27,8 +27,8 @@ def display_info(window, holder):
     )
 
     integer_data = (
-        (holder.player.mass, "mass", "green", "kg"),
-        (holder.player.traction_force, "traction_force", "green", "N"),
+        (holder.player.mass / 1000, "mass", "green", "tn"),
+        (holder.player.traction_force / 1000, "traction_force", "green", "kN"),
     )
 
     vectors = tuple(
