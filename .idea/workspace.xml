@@ -2,11 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game/default_data_collector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/physics/tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/animations/drilling_ship/movement/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/drilling_ship_movement_source.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/drilling_ship_movement_source.xcf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/animation/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/animation/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/limited.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/limited.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

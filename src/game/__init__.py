@@ -76,7 +76,7 @@ p = create(
     Tractor(Vector(0, -1), 1e5),
     CircleCollider(25),
     Animated(
-        {(lambda self: self.traction_enabled): Animation("drilling_ship/movement", 1.5)}
+        {(lambda self: self.traction_enabled): Animation("drilling_ship/movement", 1.5, 9)}
     ),
     Rotated(0),
     Navigated(planet),

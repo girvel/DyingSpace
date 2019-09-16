@@ -7,7 +7,7 @@ class Limited:
     def cycled_step(self, size, final_action=lambda: None):
         self.value += size
         while self.value > self.max_value:
-            self.value -= self.max_value
+            self.value -= (self.max_value - self.min_value)
             final_action()
 
     def step(self, size):
@@ -20,6 +20,9 @@ class Limited:
 
     def reset_min(self):
         self.value = self.min_value
+
+    def is_max(self):
+        return self.value == self.max_value
 
     def to_proportion(self):
         return (self.value - self.min_value) / (self.max_value - self.min_value)
