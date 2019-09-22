@@ -1,6 +1,9 @@
+from math import degrees
 from tkinter import Tk, Canvas, BOTH, W
 
 from PIL import ImageTk
+
+from src.ecs.tools import flag
 
 
 class TkWindow:
@@ -15,27 +18,44 @@ class TkWindow:
 
         self.camera_target = camera_target
         self.camera_position = camera_position
+        self.camera_depth = 1
 
-    def create_image(self, position, sprite, rotation=0, relative=True):
-        if relative:
+    def put(self, entity):
+        position = entity.position
+
+        if hasattr(entity, "depth"):
+            position = (position * self.camera_depth + (self.camera_position + self.size / 2) * entity.depth) \
+                       / (self.camera_depth + entity.depth)
+
+        if flag(entity, "absolute_displaying"):
             position -= self.camera_position
 
-        sprite.current_tk_version = ImageTk.PhotoImage(sprite.rotate(rotation, expand=True))
-        self.canvas.create_image(
-            position.x, position.y,
-            image=sprite.current_tk_version,
+        for attr, func in {
+            "sprite": self.create_image,
+            "radius": self.create_circle,
+        }.items():
+            if hasattr(entity, attr):
+                func(position, entity)
+                return
+
+    def create_image(self, position, entity):
+        entity.tkinter_sprite = ImageTk.PhotoImage(
+            entity.sprite.rotate(-degrees(entity.rotation), expand=True)
+            if hasattr(entity, "rotation") else entity.sprite
         )
 
-    def create_circle(self, position, radius, relative=True, fill='white'):
-        if relative:
-            position -= self.camera_position
+        self.canvas.create_image(
+            position.x, position.y,
+            image=entity.tkinter_sprite,
+        )
 
+    def create_circle(self, position, entity):
         self.canvas.create_oval(
-            position.x - radius,
-            position.y - radius,
-            position.x + radius,
-            position.y + radius,
-            fill=fill
+            position.x - entity.radius,
+            position.y - entity.radius,
+            position.x + entity.radius,
+            position.y + entity.radius,
+            fill='white',
         )
 
     def create_rectangle(self, position, size, relative=True, border='white'):

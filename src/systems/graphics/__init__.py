@@ -5,8 +5,8 @@ from src.ecs.requirements import has, method, attribute
 from src.systems.graphics.animation import animation
 from src.systems.graphics.ui import ui
 
-displayable = ("displayable" | has(method, "display"))
-display = ("display" | has(method, "create_image") & has(method, "create_circle"))
+displayable = ("displayable" | has(attribute, "visible"))
+display = ("display" | has(method, "put"))
 
 
 def clear(display):
@@ -15,7 +15,9 @@ def clear(display):
 
 
 def put(displayable, display):
-    displayable.display(display)
+    # displayable.display(display)
+    if displayable.visible:
+        display.put(displayable)
 
 
 def update(display):

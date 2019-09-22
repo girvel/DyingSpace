@@ -1,7 +1,8 @@
 class CircleSprite:
-    def __init__(self, radius, relative_displaying=True):
-        self.relative_displaying = relative_displaying
+    def __init__(self, radius, absolute_displaying=True, visible=True):
+        self.visible = visible
+        self.absolute_displaying = absolute_displaying
         self.radius = radius
 
     def display(self, canvas):
-        canvas.create_circle(self.position, self.radius, relative=self.relative_displaying)
+        canvas.create_circle(self.position, self.radius, relative=self.absolute_displaying)

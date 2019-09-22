@@ -8,6 +8,7 @@ from src.systems.gameplay.navigation.named import Named
 from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.graphics.animation import Animation
 from src.systems.graphics.animation.animated import Animated
+from src.systems.graphics.deep import Deep
 from src.systems.graphics.sprites.circle_sprite import CircleSprite
 from src.systems.graphics.tk_window import TkWindow
 from src.systems.graphics.ui.player_ui import PlayerUi
@@ -55,12 +56,20 @@ display = create(
 
 # Game entities
 
-planet = create(
-    CircleSprite(300),
-    Positioned(Vector(320, 240)),
-    Movable(),
-    Massive(1e8),
-    Named("A001-01: snowball"),
+def asteroid(name, position, radius, mass):
+    return Named(name), Positioned(position), CircleSprite(radius), Massive(mass), Movable()
+
+
+def star(name, position, depth):
+    return Named(name), Positioned(position), ImageSprite("star"), Deep(depth)
+
+
+asteroid1 = create(
+    *asteroid("A001-01: snowball", Vector(0, 0), 300, 1e8),
+)
+
+star1 = create(
+    *star("S001-01: dragon", Vector(480, 800), 15)
 )
 
 create(ConstantHolder(G=1e-3))
@@ -79,7 +88,7 @@ p = create(
         {(lambda self: self.traction_enabled): Animation("drilling_ship/movement", 1.5, 9)}
     ),
     Rotated(0),
-    Navigated(planet),
+    Navigated(asteroid1),
     Durable(5e7),
     DefaultDataCollector()
 )
