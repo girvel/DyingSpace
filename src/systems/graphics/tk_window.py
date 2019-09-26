@@ -27,7 +27,7 @@ class TkWindow:
             position = (position * self.camera_depth + (self.camera_position + self.size / 2) * entity.depth) \
                        / (self.camera_depth + entity.depth)
 
-        if flag(entity, "absolute_displaying"):
+        if not flag(entity, "relative_displaying"):
             position -= self.camera_position
 
         for attr, func in {

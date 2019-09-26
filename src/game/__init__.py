@@ -69,7 +69,7 @@ asteroid1 = create(
 )
 
 star1 = create(
-    *star("S001-01: dragon", Vector(480, 800), 15)
+    *star("S001-01: dragon", Vector(400, 800), 15)
 )
 
 create(ConstantHolder(G=1e-3))

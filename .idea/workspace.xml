@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/sprites/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/graphics/deep.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/graphics/ui_element.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" afterDir="false" />
@@ -317,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568571470266</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Implement background stars">
+      <created>1569165126038</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1569165126038</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,6 +359,7 @@
     <MESSAGE value="Encapsulate tkinter" />
     <MESSAGE value="Refactor UI (a bit)" />
     <MESSAGE value="Add names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add names" />
+    <MESSAGE value="Implement background stars" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement background stars" />
   </component>
 </project>
