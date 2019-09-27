@@ -16,3 +16,6 @@ class DefaultDataCollector:
     def get_string_data(self):
         target = self.navigation_target
         return (target.name if hasattr(target, "name") else "<unknown>", "target", "red", ""),
+
+    def __repr__(self):
+        return "{DefaultDataCollector}"

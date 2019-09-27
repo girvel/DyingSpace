@@ -6,6 +6,9 @@ class HasRequirement:
         self.attribute_name = name
         self.attribute_type = type
 
+    def __repr__(self):
+        return f"has {'method' if self.attribute_type else 'attribute'} '{self.attribute_name}'"
+
     def match(self, o):
         if not hasattr(o, self.attribute_name):
             return False
@@ -31,6 +34,9 @@ class UnionRequirements:
     def __init__(self, name=None, requirements=None):
         self.name = name
         self.requirements = [] if requirements is None else requirements
+
+    def __repr__(self):
+        return f'({self.name} | {" & ".join(repr(r) for r in self.requirements)})'
 
     def __and__(self, other):
         return UnionRequirements(self.name, self.requirements + [other])
@@ -81,6 +87,9 @@ class _Cache:
         self.collection = [] if collection is None else collection
         self.name = name
 
+    def __repr__(self):
+        return f'{{_Cache "{self.name}"}}'
+
 
 def mul(*caches):
     if not caches:
@@ -101,6 +110,9 @@ class ExecutionPair:
         self.action = action
         self.subjects = []
         self.caches = tuple(_Cache(req.name) for req in requirements)
+
+    def __repr__(self):
+        return f'{{ExecutionPair: {repr(self.requirements)} >> {self.action.__name__}}}'
 
     def try_add_subject(self, subject):
         for i, req in enumerate(self.requirements):

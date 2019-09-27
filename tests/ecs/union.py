@@ -67,6 +67,17 @@ class UnionTests(TestCase):
         self.assertFalse(hasattr(union, "union_init"))
         self.assertEqual(union.b, 100)
 
+    def test_repr_generation(self):
+        class A:
+            def __repr__(self):
+                return "1"
+
+        class B:
+            def __repr__(self):
+                return "2"
+
+        self.assertEqual(repr(Union(A(), B())), "{Union: 1, 2}")
+
 
 if __name__ == '__main__':
     main()

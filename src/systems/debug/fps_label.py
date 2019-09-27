@@ -4,6 +4,9 @@ from src.ecs.clocks import delta_time
 
 
 class FpsLabel:
+    def __repr__(self):
+        return '{FpsLabel}'
+
     @staticmethod
     def union_init(union):
         union.fps_label = Label(union._TkWindow__root)

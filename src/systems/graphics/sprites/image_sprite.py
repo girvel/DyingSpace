@@ -1,5 +1,3 @@
-from math import degrees
-
 from PIL import Image, ImageTk
 
 

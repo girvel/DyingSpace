@@ -19,6 +19,9 @@ class Clocks:
         self.register_entity(self.creator)
         self.register_entity(self.destructor)
 
+    def __repr__(self):
+        return f'{{Clocks: ups={0}, current_ups={1}}}'
+
     def register_entity(self, entity):
         for system in self.__systems:
             for i, pair in enumerate(system):
