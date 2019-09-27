@@ -8,17 +8,21 @@ from src.ecs.tools import flag
 
 class TkWindow:
     def __init__(self, title, size, camera_target=None, camera_position=None):
-        self.__root = Tk()
-        self.__root.title(title)
-        self.__root.geometry(f'{size.x}x{size.y}')
+        self.window_root = Tk()
+        self.window_root.title(title)
+        self.window_root.geometry(f'{size.x}x{size.y}')
 
+        self.title = title
         self.size = size
-        self.canvas = Canvas(self.__root, background='black')
+        self.canvas = Canvas(self.window_root, background='black')
         self.canvas.pack(fill=BOTH, expand=1)
 
         self.camera_target = camera_target
         self.camera_position = camera_position
         self.camera_depth = 1
+
+    def __repr__(self):
+        return "{{TkWindow: '{0}', size={1}}}".format(self.title, self.size)
 
     def put(self, entity):
         position = entity.position
@@ -33,6 +37,7 @@ class TkWindow:
         for attr, func in {
             "sprite": self.create_image,
             "radius": self.create_circle,
+            "rectangle_begin": self.create_rectangle,
         }.items():
             if hasattr(entity, attr):
                 func(position, entity)
@@ -58,17 +63,14 @@ class TkWindow:
             fill='white',
         )
 
-    def create_rectangle(self, position, size, relative=True, border='white'):
-        if relative:
-            position -= self.camera_position
-
-        end = position + size
+    def create_rectangle(self, position, entity):
+        end = position + entity.size
         self.canvas.create_rectangle(
             position.x,
             position.y,
             end.x,
             end.y,
-            outline=border
+            outline=entity.border_color
         )
 
     def create_line(self, position, size, relative=True, fill='white', arrow=None):
@@ -96,5 +98,5 @@ class TkWindow:
         )
 
     def bind_action(self, key, action):
-        self.__root.bind(key, action)
+        self.window_root.bind(key, action)
 

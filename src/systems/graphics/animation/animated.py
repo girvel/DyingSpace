@@ -3,4 +3,4 @@ class Animated:
         self.__dict = dict_
 
     def __repr__(self):
-        return f'{{Animated: {len(self.__dict)}}}'
+        return f'{{Animated: {len(self.__dict)} animations}}'

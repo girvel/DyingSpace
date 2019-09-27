@@ -4,7 +4,7 @@ from src.ecs.clocks import Clocks, delta_time
 from src.game.default_data_collector import DefaultDataCollector
 from src.game.fast_functions import generate_create_function
 from src.systems.debug.fps_label import FpsLabel
-from src.systems.gameplay.navigation.named import Named
+from src.ecs.special_entities.named import Named
 from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.graphics.animation import Animation
 from src.systems.graphics.animation.animated import Animated

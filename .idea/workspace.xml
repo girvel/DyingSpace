@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Realize repr generation for unions">
+    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Implement other __repr__s, add rectangle sprites support to TkWindow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/clocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/clocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/requirements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/special_entities/creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/special_entities/creator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/special_entities/destruction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/special_entities/destruction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/union.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/default_data_collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/default_data_collector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/debug/fps_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/debug/fps_label.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/gameplay/navigation/named.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/gameplay/navigation/named.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/gameplay/navigation/named.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/special_entities/named.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/gameplay/navigation/navigated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/gameplay/navigation/navigated.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/animation/animated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/animation/animated.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/deep.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/deep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ecs/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/player_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/player_ui.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +41,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ecs/special_entities" />
       <recent name="$PROJECT_DIR$/src/systems/graphics/sprites" />
       <recent name="$PROJECT_DIR$/src/tools" />
     </key>
@@ -333,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569527732672</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Realize repr generation for unions, implemented some __repr__ methods">
+      <created>1569571028965</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1569571028965</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,6 +381,7 @@
     <MESSAGE value="Add names" />
     <MESSAGE value="Implement background stars" />
     <MESSAGE value="Try to fix stars placing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Try to fix stars placing" />
+    <MESSAGE value="Realize repr generation for unions, implemented some __repr__ methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Realize repr generation for unions, implemented some __repr__ methods" />
   </component>
 </project>
