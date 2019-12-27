@@ -1,6 +1,12 @@
 from tkinter import LAST, W
 
 from src.ecs.requirements import has, attribute
+from src.ecs.union import Union
+from src.systems.graphics.sprites.line_sprite import LineSprite
+from src.systems.graphics.sprites.rectangle_sprite import RectangleSprite
+from src.systems.graphics.sprites.text_sprite import TextSprite
+from src.systems.graphics.ui_element import UiElement
+from src.systems.physics.positioned import Positioned
 from src.tools.vector import Vector
 
 
@@ -25,29 +31,33 @@ def display_info(window, holder):
         (str(round(d[0], 2)), ) + d[1:] for d in numerics
     )
 
-    window.create_rectangle(
-        UI_POSITION, DISPLAY_SIZE,
-        border='lightgreen',
-        relative=False,
+    rect = Union(
+        Positioned(UI_POSITION),
+        RectangleSprite(DISPLAY_SIZE, 'lightgreen'),
+        UiElement()
     )
 
-    for d in vectors:
-        v = d[0] ** 0 * 40
-        window.create_line(
-            DISPLAY_CENTER, v,
-            fill=d[1],
-            arrow=LAST,
-            relative=False,
+    vectors_unions = [
+        Union(
+            Positioned(DISPLAY_CENTER),
+            LineSprite(d[0] ** 0 * 40, d[1], LAST),
+            UiElement()
         )
+        for d in vectors
+    ]
 
     p = UI_POSITION + (DISPLAY_SIZE.y + 30) * Vector.down
-    for d in strings:
-        window.create_text(
-            p, f'${d[1].upper()}={d[0]} {d[3]}',
-            fill=d[2],
-            relative=False,
+    strings_unions = [
+        Union(
+            Positioned(p + i * 20 * Vector.down),
+            TextSprite(f'${d[1].upper()}={d[0]} {d[3]}', "Consolas 10", d[2]),
+            UiElement()
         )
-        p += 20 * Vector.down
+        for i, d in enumerate(strings)
+    ]
+
+    for d in strings_unions + vectors_unions + [rect]:
+        window.put(d)
 
 
 ui = (

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Implement other __repr__s, add rectangle sprites support to TkWindow">
+    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Refactor UI, make collision more realistic">
+      <change afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/line_sprite.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/text_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/gameplay/navigation/named.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/special_entities/named.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/gameplay/navigation/navigated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/gameplay/navigation/navigated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/animation/animated.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/animation/animated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/deep.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/deep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/debug/fps_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/debug/fps_label.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/player_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/player_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui_element.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui_element.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/vector.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +39,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Projects/Tundra/ecs/time.py" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -58,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for union.UnionTests.test_repr_generation">
+  <component name="RunManager" selected="Python.dying_space">
     <configuration name="counter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,8 +147,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for union.UnionTests.test_repr_generation" />
         <item itemvalue="Python.dying_space" />
+        <item itemvalue="Python tests.Unittests for union.UnionTests.test_repr_generation" />
         <item itemvalue="Python.counter" />
         <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_combines_methods" />
         <item itemvalue="Python tests.Unittests for vector.VectorTests.test_project" />
@@ -339,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569571028965</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Implement some other __repr__s, add rectangle sprites support to TkWindow">
+      <created>1569572088292</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1569572088292</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,7 +366,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Write helloworld" />
     <MESSAGE value="Backup" />
     <MESSAGE value="Realize Union class" />
     <MESSAGE value="Realize system's requirements description syntax" />
@@ -382,6 +390,7 @@
     <MESSAGE value="Implement background stars" />
     <MESSAGE value="Try to fix stars placing" />
     <MESSAGE value="Realize repr generation for unions, implemented some __repr__ methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Realize repr generation for unions, implemented some __repr__ methods" />
+    <MESSAGE value="Implement some other __repr__s, add rectangle sprites support to TkWindow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement some other __repr__s, add rectangle sprites support to TkWindow" />
   </component>
 </project>

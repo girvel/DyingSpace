@@ -9,14 +9,28 @@ def stop_collisions(self, other, destructor):
         return
 
     delta = other.position - self.position
-    if delta.squared_magnitude() <= (self.radius + other.radius) ** 2:
-        if hasattr(self, "durability") and hasattr(self, "mass"):
-            movement_energy = (self.mass * self.velocity ** 2) / 2
-            print(f'energy is {movement_energy}')
-            if movement_energy >= self.durability:
+    if delta.squared_magnitude() <= (self.radius + other.radius) ** 2 and self.velocity != other.velocity:
+        m = self.mass if hasattr(self, "mass") else 0
+        M = other.mass if hasattr(other, "mass") else 0
+
+        result_velocity = (m * self.velocity + M * other.velocity) / (m + M)
+
+        e_before = self.mass * self.velocity ** 2 / 2 + other.mass * other.velocity ** 2 / 2
+        e_after = (self.mass + other.mass) * result_velocity ** 2 / 2
+
+        de = (e_before - e_after) / 2
+        print(f'energy is {de}')
+
+        if hasattr(self, "durability"):
+            if de >= self.durability:
                 destructor.clocks_destruction_list.append(self)
 
-        self.velocity *= 0
+        if hasattr(other, "durability"):
+            if de >= other.durability:
+                destructor.clocks_destruction_list.append(other)
+
+        self.velocity = result_velocity
+        other.velocity = result_velocity
 
 
 collision = (

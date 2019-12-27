@@ -9,7 +9,7 @@ class FpsLabel:
 
     @staticmethod
     def union_init(union):
-        union.fps_label = Label(union._TkWindow__root)
+        union.fps_label = Label(union.window_root)
         union.fps_label.place(x=0, y=0)
 
     def update_fps(self):

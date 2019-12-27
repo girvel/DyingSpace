@@ -2,7 +2,7 @@ from math import cos, sin, pi
 
 
 class Vector:
-    zero = None
+    zero, up, down, left, right = [None] * 5
 
     def __init__(self, x, y):
         self.x = x

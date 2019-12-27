@@ -31,13 +31,15 @@ class TkWindow:
             position = (position * self.camera_depth + (self.camera_position + self.size / 2) * entity.depth) \
                        / (self.camera_depth + entity.depth)
 
-        if not flag(entity, "relative_displaying"):
+        if not flag(entity, "is_ui"):
             position -= self.camera_position
 
         for attr, func in {
             "sprite": self.create_image,
             "radius": self.create_circle,
-            "rectangle_begin": self.create_rectangle,
+            "is_rectangle": self.create_rectangle,
+            "arrow_type": self.create_line,
+            "text": self.create_text,
         }.items():
             if hasattr(entity, attr):
                 func(position, entity)
@@ -60,7 +62,7 @@ class TkWindow:
             position.y - entity.radius,
             position.x + entity.radius,
             position.y + entity.radius,
-            fill='white',
+            fill=entity.color,
         )
 
     def create_rectangle(self, position, entity):
@@ -70,31 +72,26 @@ class TkWindow:
             position.y,
             end.x,
             end.y,
-            outline=entity.border_color
+            outline=entity.color
         )
 
-    def create_line(self, position, size, relative=True, fill='white', arrow=None):
-        if relative:
-            position -= self.camera_position
-
-        end = position + size
+    def create_line(self, position, entity):
+        end = position + entity.size
         self.canvas.create_line(
-            position.x, position.y,
+            position.x,
+            position.y,
             end.x, end.y,
-            fill=fill,
-            arrow=arrow,
+            fill=entity.color,
+            arrow=entity.arrow_type,
         )
 
-    def create_text(self, position, text, relative=True, fill='white', anchor=W, font="Consolas 10"):
-        if relative:
-            position -= self.camera_position
-
+    def create_text(self, position, entity):
         self.canvas.create_text(
             position.x, position.y,
-            text=text,
-            fill=fill,
-            anchor=anchor,
-            font=font
+            text=entity.text,
+            fill=entity.color,
+            anchor=entity.anchor,
+            font=entity.font,
         )
 
     def bind_action(self, key, action):
