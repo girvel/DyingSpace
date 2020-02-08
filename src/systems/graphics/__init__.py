@@ -15,7 +15,6 @@ def clear(display):
 
 
 def put(displayable, display):
-    # displayable.display(display)
     if displayable.visible:
         display.put(displayable)
 
