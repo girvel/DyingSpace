@@ -7,7 +7,7 @@ from src.ecs.tools import flag
 
 
 class TkWindow:
-    def __init__(self, title, size, camera_target=None, camera_position=None):
+    def __init__(self, title, size, camera):
         self.window_root = Tk()
         self.window_root.title(title)
         self.window_root.geometry(f'{size.x}x{size.y}')
@@ -17,9 +17,7 @@ class TkWindow:
         self.canvas = Canvas(self.window_root, background='black')
         self.canvas.pack(fill=BOTH, expand=1)
 
-        self.camera_target = camera_target
-        self.camera_position = camera_position
-        self.camera_depth = 1
+        self.camera = camera
 
     def __repr__(self):
         return "{{TkWindow: '{0}', size={1}}}".format(self.title, self.size)
@@ -28,11 +26,11 @@ class TkWindow:
         position = entity.position
 
         if hasattr(entity, "depth"):
-            position = (position * self.camera_depth + (self.camera_position + self.size / 2) * entity.depth) \
-                       / (self.camera_depth + entity.depth)
+            position = (position * self.camera.depth + (self.camera.position + self.size / 2) * entity.depth) \
+                       / (self.camera.depth + entity.depth)
 
         if not flag(entity, "is_ui"):
-            position -= self.camera_position
+            position -= self.camera.position
 
         for attr, func in {
             "sprite": self.create_image,

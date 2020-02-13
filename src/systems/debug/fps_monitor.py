@@ -1,5 +1,5 @@
-from src.ecs.requirements import has, method
+from src.ecs.requirements import has
 
 fps_monitor = (
-    ("label" | has(method, "update_fps")) >> (lambda label: label.update_fps()),
+    ("label" | has("update_fps")) >> (lambda label: label.update_fps()),
 )

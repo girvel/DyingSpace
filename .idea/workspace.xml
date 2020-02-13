@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/systems/graphics/camera.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/requirements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/animation/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/animation/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/traction/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/traction/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581589662505</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Refactored HasRequirements">
+      <created>1581591083591</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1581591083592</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -377,7 +378,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Realize system's requirements description syntax" />
     <MESSAGE value="Finally realize union-style ECS" />
     <MESSAGE value="Add inertia" />
     <MESSAGE value="Implement gravity" />
@@ -402,56 +402,57 @@
     <MESSAGE value="Implement some other __repr__s, add rectangle sprites support to TkWindow" />
     <MESSAGE value="#" />
     <MESSAGE value="Remove stars, refactor project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove stars, refactor project structure" />
+    <MESSAGE value="Refactored HasRequirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored HasRequirements" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="457" y="115" key="CommitChangelistDialog2" timestamp="1581589660714">
+    <state x="457" y="115" key="CommitChangelistDialog2" timestamp="1581591082305">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="457" y="115" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1581589660714" />
+    <state x="457" y="115" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1581591082305" />
     <state x="419" y="262" key="FileChooserDialogImpl" timestamp="1580202203292">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="419" y="262" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1580202203292" />
-    <state width="1642" height="169" key="GridCell.Tab.0.bottom" timestamp="1581589368377">
+    <state width="1642" height="169" key="GridCell.Tab.0.bottom" timestamp="1581591570709">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1642" height="169" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
-    <state width="1642" height="169" key="GridCell.Tab.0.center" timestamp="1581589368377">
+    <state width="1642" height="169" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1581591570709" />
+    <state width="1642" height="169" key="GridCell.Tab.0.center" timestamp="1581591570709">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1642" height="169" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
-    <state width="1642" height="169" key="GridCell.Tab.0.left" timestamp="1581589368377">
+    <state width="1642" height="169" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1581591570709" />
+    <state width="1642" height="169" key="GridCell.Tab.0.left" timestamp="1581591570709">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1642" height="169" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
-    <state width="1642" height="169" key="GridCell.Tab.0.right" timestamp="1581589368377">
+    <state width="1642" height="169" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1581591570709" />
+    <state width="1642" height="169" key="GridCell.Tab.0.right" timestamp="1581591570709">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1642" height="169" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
-    <state width="1642" height="169" key="GridCell.Tab.1.bottom" timestamp="1581589368378">
+    <state width="1642" height="169" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1581591570709" />
+    <state width="1642" height="169" key="GridCell.Tab.1.bottom" timestamp="1581591570593">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1642" height="169" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368378" />
-    <state width="1642" height="169" key="GridCell.Tab.1.center" timestamp="1581589368377">
+    <state width="1642" height="169" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1581591570593" />
+    <state width="1642" height="169" key="GridCell.Tab.1.center" timestamp="1581591570592">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1642" height="169" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
-    <state width="1642" height="169" key="GridCell.Tab.1.left" timestamp="1581589368377">
+    <state width="1642" height="169" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1581591570592" />
+    <state width="1642" height="169" key="GridCell.Tab.1.left" timestamp="1581591570592">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1642" height="169" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
-    <state width="1642" height="169" key="GridCell.Tab.1.right" timestamp="1581589368378">
+    <state width="1642" height="169" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1581591570592" />
+    <state width="1642" height="169" key="GridCell.Tab.1.right" timestamp="1581591570593">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1642" height="169" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368378" />
-    <state x="432" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581589667535">
+    <state width="1642" height="169" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1581591570593" />
+    <state x="432" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581591086075">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1581589667535" />
-    <state x="510" y="133" width="661" height="774" key="find.popup" timestamp="1581556743936">
+    <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1581591086075" />
+    <state x="510" y="133" width="661" height="774" key="find.popup" timestamp="1581591565803">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="510" y="133" width="661" height="774" key="find.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1581556743936" />
+    <state x="510" y="133" width="661" height="774" key="find.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1581591565803" />
   </component>
 </project>

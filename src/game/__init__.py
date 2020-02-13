@@ -8,6 +8,7 @@ from src.ecs.special_entities.named import Named
 from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.graphics.animation import Animation
 from src.systems.graphics.animation.animated import Animated
+from src.systems.graphics.camera import Camera
 from src.systems.graphics.deep import Deep
 from src.systems.graphics.sprites.circle_sprite import CircleSprite
 from src.systems.graphics.tk_window import TkWindow
@@ -45,8 +46,14 @@ create = generate_create_function(clocks)
 
 # UI
 
+camera = create(
+    Camera(None),
+    Positioned(Vector(0, 0)),
+    Deep(1),
+)
+
 display = create(
-    TkWindow("Dying space", Vector(1024, 768)),
+    TkWindow("Dying space", Vector(1024, 768), camera),
     PlayerUi(None),
     *(() if not __debug__ else (
         FpsLabel(),
@@ -86,7 +93,7 @@ p = create(
 )
 
 display.player = p
-display.camera_target = p
+display.camera.target = p
 
 
 def traction_set(value):
