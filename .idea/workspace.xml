@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Refactor UI, make collision more realistic">
-      <change afterPath="$PROJECT_DIR$/assets/sounds/Narcotic Chill - Sani.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DyingSpace.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DyingSpace.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/sprites/Gauss gun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/Turret.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dying_space.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dying_space.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dying_space.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/animation/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/animation/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
       <recent name="$PROJECT_DIR$/src/tools" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.dying_space">
+  <component name="RunManager" selected="Python.dying_space (1)">
     <configuration name="counter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,6 +62,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/counter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dying_space (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DyingSpace" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dying_space.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,27 +140,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for vector.VectorTests.test_project" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="DyingSpace" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tools" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;vector.VectorTests.test_project&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.dying_space (1)" />
         <item itemvalue="Python.dying_space" />
         <item itemvalue="Python tests.Unittests for union.UnionTests.test_repr_generation" />
         <item itemvalue="Python.counter" />
         <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_combines_methods" />
-        <item itemvalue="Python tests.Unittests for vector.VectorTests.test_project" />
       </list>
     </recent_temporary>
   </component>
@@ -335,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569572088292</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="#">
+      <created>1581197599052</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1581197599052</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,7 +368,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Backup" />
     <MESSAGE value="Realize Union class" />
     <MESSAGE value="Realize system's requirements description syntax" />
     <MESSAGE value="Finally realize union-style ECS" />
@@ -378,44 +392,57 @@
     <MESSAGE value="Try to fix stars placing" />
     <MESSAGE value="Realize repr generation for unions, implemented some __repr__ methods" />
     <MESSAGE value="Implement some other __repr__s, add rectangle sprites support to TkWindow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement some other __repr__s, add rectangle sprites support to TkWindow" />
+    <MESSAGE value="#" />
+    <option name="LAST_COMMIT_MESSAGE" value="#" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="457" y="115" key="CommitChangelistDialog2" timestamp="1581197597318">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="457" y="115" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1581197597318" />
     <state x="419" y="262" key="FileChooserDialogImpl" timestamp="1580202203292">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="419" y="262" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1580202203292" />
-    <state width="1243" height="169" key="GridCell.Tab.0.bottom" timestamp="1580312228556">
+    <state width="1642" height="169" key="GridCell.Tab.0.bottom" timestamp="1581589368377">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1243" height="169" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1580312228556" />
-    <state width="1243" height="169" key="GridCell.Tab.0.center" timestamp="1580312228556">
+    <state width="1642" height="169" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
+    <state width="1642" height="169" key="GridCell.Tab.0.center" timestamp="1581589368377">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1243" height="169" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1580312228556" />
-    <state width="1243" height="169" key="GridCell.Tab.0.left" timestamp="1580312228556">
+    <state width="1642" height="169" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
+    <state width="1642" height="169" key="GridCell.Tab.0.left" timestamp="1581589368377">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1243" height="169" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1580312228556" />
-    <state width="1243" height="169" key="GridCell.Tab.0.right" timestamp="1580312228556">
+    <state width="1642" height="169" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
+    <state width="1642" height="169" key="GridCell.Tab.0.right" timestamp="1581589368377">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1243" height="169" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1580312228556" />
-    <state width="1243" height="169" key="GridCell.Tab.1.bottom" timestamp="1580312228556">
+    <state width="1642" height="169" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
+    <state width="1642" height="169" key="GridCell.Tab.1.bottom" timestamp="1581589368378">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1243" height="169" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1580312228556" />
-    <state width="1243" height="169" key="GridCell.Tab.1.center" timestamp="1580312228556">
+    <state width="1642" height="169" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368378" />
+    <state width="1642" height="169" key="GridCell.Tab.1.center" timestamp="1581589368377">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1243" height="169" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1580312228556" />
-    <state width="1243" height="169" key="GridCell.Tab.1.left" timestamp="1580312228556">
+    <state width="1642" height="169" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
+    <state width="1642" height="169" key="GridCell.Tab.1.left" timestamp="1581589368377">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1243" height="169" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1580312228556" />
-    <state width="1243" height="169" key="GridCell.Tab.1.right" timestamp="1580312228556">
+    <state width="1642" height="169" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368377" />
+    <state width="1642" height="169" key="GridCell.Tab.1.right" timestamp="1581589368378">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1243" height="169" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1580312228556" />
+    <state width="1642" height="169" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1581589368378" />
+    <state x="432" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581197602402">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1581197602402" />
+    <state x="510" y="133" width="661" height="774" key="find.popup" timestamp="1581556743936">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="510" y="133" width="661" height="774" key="find.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1581556743936" />
   </component>
 </project>

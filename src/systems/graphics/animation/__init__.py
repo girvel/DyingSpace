@@ -9,7 +9,7 @@ from src.tools.limited import Limited
 
 
 class Animation:
-    PATH = '../assets/animations'
+    PATH = 'assets/animations'
 
     def __init__(self, name, length, ending_loop_index=None):
         self.sprites = [

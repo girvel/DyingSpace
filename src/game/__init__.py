@@ -60,16 +60,8 @@ def asteroid(name, position, radius, mass):
     return Named(name), Positioned(position), CircleSprite(radius), Massive(mass), Movable()
 
 
-def star(name, position, depth):
-    return Named(name), Positioned(position), ImageSprite("star"), Deep(depth)
-
-
 asteroid1 = create(
     *asteroid("A001-01: snowball", Vector(0, 0), 300, 1e8),
-)
-
-star1 = create(
-    *star("S001-01: dragon", Vector(400, 800), 15)
 )
 
 create(ConstantHolder(G=1e-3))

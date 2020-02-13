@@ -8,7 +8,7 @@ class ImageSprite:
         if name:
             for format in ("gif", "png"):
                 try:
-                    self.sprite = Image.open(f'../assets/sprites/{name}.{format}')
+                    self.sprite = Image.open(f'assets/sprites/{name}.{format}')
                     break
                 except FileNotFoundError:
                     pass
