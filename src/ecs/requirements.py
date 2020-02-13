@@ -1,19 +1,13 @@
-attribute, method = range(2)
-
-
 class HasRequirement:
-    def __init__(self, type, name):
+    def __init__(self, name):
         self.attribute_name = name
-        self.attribute_type = type
 
     def __repr__(self):
-        return f"has {'method' if self.attribute_type else 'attribute'} '{self.attribute_name}'"
+        return f"has '{self.attribute_name}'"
 
     def match(self, o):
         if not hasattr(o, self.attribute_name):
             return False
-        if self.attribute_type == method:
-            return callable(getattr(o, self.attribute_name))
         return True
 
     def __and__(self, other):

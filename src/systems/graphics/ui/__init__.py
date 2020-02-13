@@ -1,6 +1,6 @@
 from tkinter import LAST, W
 
-from src.ecs.requirements import has, attribute
+from src.ecs.requirements import has
 from src.ecs.union import Union
 from src.systems.graphics.sprites.line_sprite import LineSprite
 from src.systems.graphics.sprites.rectangle_sprite import RectangleSprite
@@ -61,5 +61,5 @@ def display_info(window, holder):
 
 
 ui = (
-    ("window" | has(attribute, "canvas")) * ("holder" | has(attribute, "player")) >> display_info,
+    ("window" | has("canvas")) * ("holder" | has("player")) >> display_info,
 )

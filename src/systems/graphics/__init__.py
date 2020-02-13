@@ -1,12 +1,12 @@
 from _tkinter import TclError
 
 from src.ecs.clocks import Clocks
-from src.ecs.requirements import has, method, attribute
+from src.ecs.requirements import has
 from src.systems.graphics.animation import animation
 from src.systems.graphics.ui import ui
 
-displayable = ("displayable" | has(attribute, "visible"))
-display = ("display" | has(method, "put"))
+displayable = ("displayable" | has("visible"))
+display = ("display" | has("put"))
 
 
 def clear(display):

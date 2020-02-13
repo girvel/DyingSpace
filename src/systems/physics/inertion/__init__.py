@@ -1,7 +1,7 @@
 from src.ecs.clocks import delta_time
-from src.ecs.requirements import has, attribute
+from src.ecs.requirements import has
 
-movable = "movable" | has(attribute, "velocity") & has(attribute, "position")
+movable = "movable" | has("velocity") & has("position")
 
 
 def apply_velocity(movable):

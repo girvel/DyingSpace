@@ -1,5 +1,5 @@
 from src.ecs.clocks import delta_time
-from src.ecs.requirements import has, attribute
+from src.ecs.requirements import has
 
 
 def apply_force(tractor):
@@ -15,9 +15,9 @@ def apply_force(tractor):
 
 traction = (
     ("tractor" |
-     has(attribute, "velocity") &
-     has(attribute, "traction_force") &
-     has(attribute, "traction_direction") &
-     has(attribute, "mass")
+     has("velocity") &
+     has("traction_force") &
+     has("traction_direction") &
+     has("mass")
      ) >> apply_force,
 )

@@ -1,5 +1,5 @@
 from src.ecs.clocks import delta_time
-from src.ecs.requirements import has, attribute
+from src.ecs.requirements import has
 
 
 def accelerate(self, other, constants):
@@ -13,7 +13,7 @@ def accelerate(self, other, constants):
     self.velocity += delta ** 0 * other.mass / delta.squared_magnitude() * constants.G * delta_time()
 
 
-massive = has(attribute, "mass") & has(attribute, "position") & has(attribute, "velocity")
+massive = has("mass") & has("position") & has("velocity")
 gravity = (
-    ("self" | massive) * ("other" | massive) * ("constants" | has(attribute, "G")) >> accelerate,
+    ("self" | massive) * ("other" | massive) * ("constants" | has("G")) >> accelerate,
 )

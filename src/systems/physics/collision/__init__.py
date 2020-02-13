@@ -1,7 +1,7 @@
-from src.ecs.requirements import has, attribute
+from src.ecs.requirements import has
 
-solid = has(attribute, "radius") & has(attribute, "position") & has(attribute, "velocity")
-destructor_ = has(attribute, "clocks_destruction_list")
+solid = has("radius") & has("position") & has("velocity")
+destructor_ = has("clocks_destruction_list")
 
 
 def stop_collisions(self, other, destructor):

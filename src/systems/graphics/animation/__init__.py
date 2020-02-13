@@ -4,7 +4,7 @@ from math import floor
 from PIL import Image
 
 from src.ecs.clocks import delta_time
-from src.ecs.requirements import attribute, has
+from src.ecs.requirements import has
 from src.tools.limited import Limited
 
 
@@ -46,5 +46,5 @@ def animate(animated):
 
 
 animation = (
-    ("animated" | has(attribute, "_Animated__dict") & has(attribute, "sprite")) >> animate,
+    ("animated" | has("_Animated__dict") & has("sprite")) >> animate,
 )

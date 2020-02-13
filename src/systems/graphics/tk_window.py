@@ -1,5 +1,5 @@
 from math import degrees
-from tkinter import Tk, Canvas, BOTH, W
+from tkinter import Tk, Canvas, BOTH
 
 from PIL import ImageTk
 
