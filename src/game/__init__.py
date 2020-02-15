@@ -28,12 +28,14 @@ from src.systems.physics.traction.tractor import Tractor
 from src.tools.vector import Vector
 
 
+DEBUG = True
+
 # Clocks initialization
 
 clocks = Clocks(
     graphics,
     physics,
-    *(() if not __debug__ else (
+    *(() if not DEBUG else (
         fps_monitor,
     ))
 )
@@ -54,11 +56,11 @@ camera = create(
 
 display = create(
     TkWindow("Dying space", Vector(1024, 768), camera),
-    PlayerUi(None),
-    *(() if not __debug__ else (
-        FpsLabel(),
-    ))
+    PlayerUi(None)
 )
+
+if DEBUG:
+    fps_label = create(FpsLabel(display.window_root))
 
 
 # Game entities
@@ -78,7 +80,7 @@ create(ConstantHolder(G=1e-3))
 
 p = create(
     ImageSprite("drilling_ship"),
-    Positioned(Vector(480, 800)),
+    Positioned(Vector(8000, 6000)),
     Movable(),
     Massive(1e4),
     Tractor(Vector(0, -1), 1e5),

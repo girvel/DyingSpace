@@ -15,7 +15,13 @@ class DefaultDataCollector:
 
     def get_string_data(self):
         target = self.navigation_target
-        return (target.name if hasattr(target, "name") else "<unknown>", "target", "red", ""),
+        return \
+            (target.name if hasattr(target, "name") else "<unknown>", "target", "red", ""), \
+            ('    W to launch engine', '', 'green', ''), \
+            ('    S to stop it', '', 'green', ''), \
+            ('    A/D to rotate spaceship', '', 'green', ''), \
+            ('    Dont forget to buckle your seat belts', '', 'green', ''), \
+            ('    and switch system language', '', 'green', '')
 
     def __repr__(self):
         return "{DefaultDataCollector}"
