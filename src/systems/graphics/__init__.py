@@ -1,7 +1,7 @@
 from _tkinter import TclError
 
 from src.ecs.clocks import Clocks
-from src.ecs.requirements import has
+from src.ecs.requirements.has import has
 from src.systems.graphics.animation import animation
 from src.systems.graphics.ui import ui
 

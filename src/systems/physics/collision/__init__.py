@@ -1,4 +1,4 @@
-from src.ecs.requirements import has
+from src.ecs.requirements.has import has
 
 solid = has("radius") & has("position") & has("velocity")
 destructor_ = has("clocks_destruction_list")

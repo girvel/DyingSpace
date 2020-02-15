@@ -1,6 +1,9 @@
 from unittest import TestCase, main
 
-from src.ecs.requirements import has, method, UnionRequirements, _Cache, mul, ExecutionPair
+from src.ecs.requirements.cache import _Cache, mul
+from src.ecs.requirements.has import has
+from src.ecs.requirements.execution_pair import ExecutionPair
+from src.ecs.requirements.union import UnionRequirements
 
 
 class RequirementsTests(TestCase):
@@ -17,7 +20,7 @@ class RequirementsTests(TestCase):
             def a(self):
                 pass
 
-        h = has(method, "t")
+        h = has("t")
 
         # assert
         self.assertTrue(h.match(A()))
@@ -25,9 +28,9 @@ class RequirementsTests(TestCase):
 
     def test_has_and_has(self):
         # arrange
-        h1 = has(method, "a")
-        h2 = has(method, "b")
-        h3 = has(method, "c")
+        h1 = has("a")
+        h2 = has("b")
+        h3 = has("c")
         h = h1 & h2 & h3
 
         # assert
@@ -36,7 +39,7 @@ class RequirementsTests(TestCase):
 
     def test_union_requirements_ror(self):
         # arrange
-        h1 = has(method, "a")
+        h1 = has("a")
         h = "B" | h1
 
         # assert
@@ -54,8 +57,8 @@ class RequirementsTests(TestCase):
         class B:
             def a(self): pass
 
-        h1 = has(method, "a")
-        h2 = has(method, "b")
+        h1 = has("a")
+        h2 = has("b")
         h = "u" | h1 & h2
 
         # assert
@@ -66,8 +69,8 @@ class RequirementsTests(TestCase):
 
     def test_union_requirements_multiplication(self):
         # arrange
-        ur1 = UnionRequirements("a", [has(method, "a"), has(method, "b")])
-        ur2 = UnionRequirements("b", [has(method, "c"), has(method, "b")])
+        ur1 = UnionRequirements("a", [has("a"), has("b")])
+        ur2 = UnionRequirements("b", [has("c"), has("b")])
 
         # act
         t = ur1 * ur1 * ur2
@@ -120,7 +123,7 @@ class RequirementsTests(TestCase):
         class C(A, B): pass
 
         pair = ExecutionPair(
-            ("f" | has(method, "a")) * ("s" | has(method, "b")),
+            ("f" | has("a")) * ("s" | has("b")),
             lambda f, s: None
         )
 

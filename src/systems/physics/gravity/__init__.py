@@ -1,5 +1,5 @@
 from src.ecs.clocks import delta_time
-from src.ecs.requirements import has
+from src.ecs.requirements.has import has
 
 
 def accelerate(self, other, constants):

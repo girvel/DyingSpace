@@ -4,7 +4,7 @@ from math import floor
 from PIL import Image
 
 from src.ecs.clocks import delta_time
-from src.ecs.requirements import has
+from src.ecs.requirements.has import has
 from src.tools.limited import Limited
 
 

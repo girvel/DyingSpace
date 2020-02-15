@@ -1,6 +1,6 @@
 from tkinter import LAST, W
 
-from src.ecs.requirements import has
+from src.ecs.requirements.has import has
 from src.ecs.union import Union
 from src.systems.graphics.sprites.line_sprite import LineSprite
 from src.systems.graphics.sprites.rectangle_sprite import RectangleSprite
