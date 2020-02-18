@@ -17,19 +17,19 @@ def display_info(window, holder):
 
     player = holder.player
 
-    combined_data = player.get_combined_data()
+    combined_data = player.get_vector_data()
 
     vectors = tuple(
-        (data[0], data[2]) for data in combined_data
+        (data[1], data[2]) for data in combined_data
     )
 
-    numerics = tuple(
-        (abs(data[0]), ) + data[1:] for data in combined_data
-    ) + player.get_numeric_data()
+    scalars = tuple(
+        (t[0], abs(t[1]), t[2]) for t in combined_data
+    ) + player.get_scalar_data()
 
-    strings = player.get_string_data() + tuple(
-        (str(round(d[0], 2)), ) + d[1:] for d in numerics
-    )
+    strings = tuple(
+        (t[0].format(round(t[1], 2)), t[2]) for t in scalars
+    ) + player.get_string_data()
 
     rect = Union(
         Positioned(UI_POSITION),
@@ -50,10 +50,10 @@ def display_info(window, holder):
     strings_unions = [
         Union(
             Positioned(p + i * 20 * Vector.down),
-            TextSprite(f'${d[1].upper()}={d[0]} {d[3]}', "Consolas 10", d[2]),
+            TextSprite(t[0], "Courier 9", t[1]),
             UiElement()
         )
-        for i, d in enumerate(strings)
+        for i, t in enumerate(strings)
     ]
 
     for d in strings_unions + vectors_unions + [rect]:

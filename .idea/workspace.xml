@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/requirements/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/requirements/cache.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/requirements/execution_pair.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/requirements/has.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/requirements/tuple_container.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ecs/requirements/union.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/requirements.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/debug/fps_monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/debug/fps_monitor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/animation/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/animation/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/requirements/execution_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/requirements/execution_pair.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/default_data_collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/default_data_collector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/inertion/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/traction/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/traction/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ecs/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ecs/requirements.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -380,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581765480904</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Split requirements.py">
+      <created>1581766084485</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1581766084485</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,7 +391,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implement gravity" />
     <MESSAGE value="Implement stopping circle collisions" />
     <MESSAGE value="Implement simple control" />
     <MESSAGE value="Make collision more realistic" />
@@ -423,7 +415,8 @@
     <MESSAGE value="Refactored HasRequirements" />
     <MESSAGE value="Refactor camera" />
     <MESSAGE value="Make FPS visible only in debug mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make FPS visible only in debug mode" />
+    <MESSAGE value="Split requirements.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Split requirements.py" />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581763695294">
@@ -434,50 +427,50 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="643" y="410" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1581765719521" />
-    <state x="457" y="115" key="CommitChangelistDialog2" timestamp="1581765479624">
+    <state x="457" y="115" key="CommitChangelistDialog2" timestamp="1581766082687">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="457" y="115" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1581765479624" />
+    <state x="457" y="115" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1581766082687" />
     <state x="419" y="262" key="FileChooserDialogImpl" timestamp="1580202203292">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="419" y="262" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1580202203292" />
-    <state width="1643" height="169" key="GridCell.Tab.0.bottom" timestamp="1581765947286">
+    <state width="2022" height="172" key="GridCell.Tab.0.bottom" timestamp="1582021488310">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1643" height="169" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1581765947286" />
-    <state width="1643" height="169" key="GridCell.Tab.0.center" timestamp="1581765947286">
+    <state width="2022" height="172" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1582021488310" />
+    <state width="2022" height="172" key="GridCell.Tab.0.center" timestamp="1582021488310">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1643" height="169" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1581765947286" />
-    <state width="1643" height="169" key="GridCell.Tab.0.left" timestamp="1581765947286">
+    <state width="2022" height="172" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1582021488310" />
+    <state width="2022" height="172" key="GridCell.Tab.0.left" timestamp="1582021488310">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1643" height="169" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1581765947286" />
-    <state width="1643" height="169" key="GridCell.Tab.0.right" timestamp="1581765947286">
+    <state width="2022" height="172" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1582021488310" />
+    <state width="2022" height="172" key="GridCell.Tab.0.right" timestamp="1582021488310">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1643" height="169" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1581765947286" />
-    <state width="1643" height="169" key="GridCell.Tab.1.bottom" timestamp="1581765947172">
+    <state width="2022" height="172" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1582021488310" />
+    <state width="2022" height="172" key="GridCell.Tab.1.bottom" timestamp="1582021488178">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1643" height="169" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1581765947172" />
-    <state width="1643" height="169" key="GridCell.Tab.1.center" timestamp="1581765947172">
+    <state width="2022" height="172" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1582021488178" />
+    <state width="2022" height="172" key="GridCell.Tab.1.center" timestamp="1582021488177">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1643" height="169" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1581765947172" />
-    <state width="1643" height="169" key="GridCell.Tab.1.left" timestamp="1581765947172">
+    <state width="2022" height="172" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1582021488177" />
+    <state width="2022" height="172" key="GridCell.Tab.1.left" timestamp="1582021488177">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1643" height="169" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1581765947172" />
-    <state width="1643" height="169" key="GridCell.Tab.1.right" timestamp="1581765947172">
+    <state width="2022" height="172" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1582021488177" />
+    <state width="2022" height="172" key="GridCell.Tab.1.right" timestamp="1582021488177">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1643" height="169" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1581765947172" />
-    <state x="673" y="230" key="RollbackChangesDialog" timestamp="1581755914332">
+    <state width="2022" height="172" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1582021488177" />
+    <state x="673" y="230" key="RollbackChangesDialog" timestamp="1581938509182">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="673" y="230" key="RollbackChangesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1581755914332" />
+    <state x="673" y="230" key="RollbackChangesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1581938509182" />
     <state x="371" y="151" key="SettingsEditor" timestamp="1581763661508">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
