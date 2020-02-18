@@ -40,9 +40,6 @@ clocks = Clocks(
     ))
 )
 
-
-# Fast methods
-
 create = generate_create_function(clocks)
 
 
@@ -91,7 +88,7 @@ p = create(
     Rotated(0),
     Navigated(asteroid1),
     Durable(5e7),
-    DefaultDataCollector()
+    DefaultDataCollector('assets/texts/ui/default_data_collector.json', 'russian')
 )
 
 display.player = p

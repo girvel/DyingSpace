@@ -1,27 +1,39 @@
+import json
+
 from src.systems.physics.tools import distance_vector
 
 
 class DefaultDataCollector:
+    def __init__(self, path, language):
+        self.path = path
+        with open(self.path, encoding="UTF-8") as f:
+            self.texts = json.load(f)
+        self.language = language
+
+    def get_text(self, name):
+        return self.texts[self.language][name]
+
     def get_vector_data(self):
-        return \
-            ("$speed = {0} km/s", self.velocity / 1000, "lightgreen"), \
-            ("$distance_to_target = {0} km", distance_vector(self, self.navigation_target) / 1000, "red")
+        return (
+            (self.get_text("speed"), self.velocity / 1000, "lightgreen"),
+            (self.get_text("distance"), distance_vector(self, self.navigation_target) / 1000, "red")
+        )
 
     def get_scalar_data(self):
-        return \
-            ("$mass = {0} tn", self.mass / 1000, "green"), \
-            ("$traction_force = {0} kN", self.traction_force / 1000, "green"), \
-            ("$durability = {0} M", self.durability / 1e6, "green"),
+        return (
+            (self.get_text("mass"), self.mass / 1000, "green"),
+            (self.get_text("traction_force"), self.traction_force / 1000, "green"),
+            (self.get_text("durability"), self.durability / 1e6, "green"),
+        )
 
     def get_string_data(self):
         target = self.navigation_target
-        return \
-            ('$target = ' + (target.name if hasattr(target, "name") else "<unknown>"), "red"), \
-            ('    W to launch engine', 'green'), \
-            ('    S to stop it', 'green'), \
-            ('    A/D to rotate spaceship', 'green'), \
-            ('    Dont forget to buckle your seat belts', 'green'), \
-            ('    and switch system language', 'green')
+        return (
+            (self.get_text("target").format(target.name if hasattr(target, "name") else "<unknown>"), "red"),
+            *(
+                (line, "green") for line in self.get_text("guide")
+            )
+        )
 
     def __repr__(self):
         return "{DefaultDataCollector}"

@@ -1,0 +1,33 @@
+{
+  "english": {
+    "speed": "$speed = {0} km/s",
+    "distance": "$distance_to_target = {0} km",
+    "mass": "$mass = {0} tn",
+    "traction_force": "$traction_force = {0} kN",
+    "durability": "$durability = {0} MJ",
+    "target": "'$target = {0}",
+    "guide": [
+      "    W to launch engine,",
+      "    S to stop it,",
+      "    A/D to rotate spaceship.",
+      "    Dont forget to buckle your seat belts",
+      "    and switch system language"
+    ]
+  },
+
+  "russian": {
+    "speed": "$СКОРОСТЬ = {0} км/с",
+    "distance": "$РАССТОЯНИЕ = {0} км",
+    "mass": "$МАССА = {0} т",
+    "traction_force": "$СИЛА_ТЯГИ = {0} кН",
+    "durability": "$ПРОЧНОСТЬ = {0} МДж",
+    "target": "'$ЦЕЛЬ = {0}",
+    "guide": [
+      "    W запускает двигатель,",
+      "    S останавливает,",
+      "    A/D поворачивает космический корабль.",
+      "    Не забудьте пристягнуть ремни безопасности",
+      "    и переключить системный язык."
+    ]
+  }
+}
