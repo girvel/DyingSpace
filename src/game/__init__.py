@@ -28,7 +28,7 @@ from src.systems.physics.traction.tractor import Tractor
 from src.tools.vector import Vector
 
 
-DEBUG = True
+DEBUG = False
 
 # Clocks initialization
 

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/texts/ui/default_data_collector.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/default_data_collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/default_data_collector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -380,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582038155917</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Russify UI">
+      <created>1582040170935</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1582040170935</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,7 +402,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implement simple control" />
     <MESSAGE value="Make collision more realistic" />
     <MESSAGE value="Add sprites" />
     <MESSAGE value="Add debug-mode fps label" />
@@ -423,7 +426,8 @@
     <MESSAGE value="Make FPS visible only in debug mode" />
     <MESSAGE value="Split requirements.py" />
     <MESSAGE value="Refactor default data collector" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor default data collector" />
+    <MESSAGE value="Russify UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Russify UI" />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581763695294">
@@ -434,30 +438,30 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="643" y="410" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1581765719521" />
-    <state x="710" y="130" key="CommitChangelistDialog2" timestamp="1582038152911">
+    <state x="710" y="130" key="CommitChangelistDialog2" timestamp="1582040170163">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="710" y="130" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1582038152911" />
+    <state x="710" y="130" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1582040170163" />
     <state x="419" y="262" key="FileChooserDialogImpl" timestamp="1580202203292">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="419" y="262" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1580202203292" />
-    <state width="2022" height="172" key="GridCell.Tab.0.bottom" timestamp="1582040024010">
+    <state width="2022" height="171" key="GridCell.Tab.0.bottom" timestamp="1582120643886">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="172" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1582040024010" />
-    <state width="2022" height="172" key="GridCell.Tab.0.center" timestamp="1582040024010">
+    <state width="2022" height="171" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1582120643886" />
+    <state width="2022" height="171" key="GridCell.Tab.0.center" timestamp="1582120643886">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="172" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1582040024010" />
-    <state width="2022" height="172" key="GridCell.Tab.0.left" timestamp="1582040024010">
+    <state width="2022" height="171" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1582120643886" />
+    <state width="2022" height="171" key="GridCell.Tab.0.left" timestamp="1582120643885">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="172" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1582040024010" />
-    <state width="2022" height="172" key="GridCell.Tab.0.right" timestamp="1582040024010">
+    <state width="2022" height="171" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1582120643885" />
+    <state width="2022" height="171" key="GridCell.Tab.0.right" timestamp="1582120643886">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="172" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1582040024010" />
+    <state width="2022" height="171" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1582120643886" />
     <state width="2022" height="172" key="GridCell.Tab.1.bottom" timestamp="1582040023899">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -482,10 +486,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="371" y="151" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1581763661508" />
-    <state x="432" y="252" key="Vcs.Push.Dialog.v2" timestamp="1582038158219">
+    <state x="432" y="252" key="Vcs.Push.Dialog.v2" timestamp="1582040172592">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1582038158219" />
+    <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1582040172592" />
     <state x="510" y="133" width="661" height="774" key="find.popup" timestamp="1581765869926">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
