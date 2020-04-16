@@ -50,7 +50,7 @@ def display_info(window, holder):
     strings_unions = [
         Union(
             Positioned(p + i * 20 * Vector.down),
-            TextSprite(t[0], "Courier 9", t[1]),
+            TextSprite(t[0], "Ostemvoid 9", t[1]),
             UiElement()
         )
         for i, t in enumerate(strings)

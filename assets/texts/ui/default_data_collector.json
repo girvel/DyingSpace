@@ -5,7 +5,7 @@
     "mass": "$mass = {0} tn",
     "traction_force": "$traction_force = {0} kN",
     "durability": "$durability = {0} MJ",
-    "target": "'$target = {0}",
+    "target": "$target = {0}",
     "guide": [
       "    W to launch engine,",
       "    S to stop it,",

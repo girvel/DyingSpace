@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/texts/ui/default_data_collector.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/texts/ui/default_data_collector.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/ui/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +35,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Projects/Tundra/ecs/time.py" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -392,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584340937279</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Update README.md">
+      <created>1584341930619</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1584341930619</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -410,7 +419,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add sprites" />
     <MESSAGE value="Add debug-mode fps label" />
     <MESSAGE value="Encapsulate physics, change project structure" />
     <MESSAGE value="Realize simple animations" />
@@ -435,69 +443,74 @@
     <MESSAGE value="Refactor default data collector" />
     <MESSAGE value="Russify UI" />
     <MESSAGE value="Try to add install script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Try to add install script" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="294" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581763695294">
+    <state x="294" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587038899181">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="294" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1581763695294" />
+    <state x="294" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1587038899181" />
+    <state x="308" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587039004257">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="308" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1587039004257" />
     <state x="643" y="410" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1581765719521">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="643" y="410" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1581765719521" />
-    <state x="710" y="130" key="CommitChangelistDialog2" timestamp="1584340935909">
+    <state x="710" y="130" key="CommitChangelistDialog2" timestamp="1584341929525">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="710" y="130" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1584340935909" />
-    <state x="419" y="262" key="FileChooserDialogImpl" timestamp="1580202203292">
+    <state x="710" y="130" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1584341929525" />
+    <state x="419" y="262" key="FileChooserDialogImpl" timestamp="1587038978653">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="419" y="262" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1580202203292" />
-    <state width="2022" height="171" key="GridCell.Tab.0.bottom" timestamp="1584339163344">
+    <state x="419" y="262" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1587038978653" />
+    <state width="1243" height="171" key="GridCell.Tab.0.bottom" timestamp="1587038615032">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="171" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1584339163344" />
-    <state width="2022" height="171" key="GridCell.Tab.0.center" timestamp="1584339163343">
+    <state width="1243" height="171" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1587038615032" />
+    <state width="1243" height="171" key="GridCell.Tab.0.center" timestamp="1587038615032">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="171" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1584339163343" />
-    <state width="2022" height="171" key="GridCell.Tab.0.left" timestamp="1584339163343">
+    <state width="1243" height="171" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1587038615032" />
+    <state width="1243" height="171" key="GridCell.Tab.0.left" timestamp="1587038615031">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="171" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1584339163343" />
-    <state width="2022" height="171" key="GridCell.Tab.0.right" timestamp="1584339163344">
+    <state width="1243" height="171" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1587038615031" />
+    <state width="1243" height="171" key="GridCell.Tab.0.right" timestamp="1587038615032">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="171" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1584339163344" />
-    <state width="2022" height="172" key="GridCell.Tab.1.bottom" timestamp="1582040023899">
+    <state width="1243" height="171" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1587038615032" />
+    <state width="2022" height="171" key="GridCell.Tab.1.bottom" timestamp="1584359750537">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="172" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1582040023899" />
-    <state width="2022" height="172" key="GridCell.Tab.1.center" timestamp="1582040023899">
+    <state width="2022" height="171" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1584359750537" />
+    <state width="2022" height="171" key="GridCell.Tab.1.center" timestamp="1584359750537">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="172" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1582040023899" />
-    <state width="2022" height="172" key="GridCell.Tab.1.left" timestamp="1582040023899">
+    <state width="2022" height="171" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1584359750537" />
+    <state width="2022" height="171" key="GridCell.Tab.1.left" timestamp="1584359750537">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="172" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1582040023899" />
-    <state width="2022" height="172" key="GridCell.Tab.1.right" timestamp="1582040023899">
+    <state width="2022" height="171" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1584359750537" />
+    <state width="2022" height="171" key="GridCell.Tab.1.right" timestamp="1584359750537">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2022" height="172" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1582040023899" />
+    <state width="2022" height="171" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1584359750537" />
     <state x="673" y="230" key="RollbackChangesDialog" timestamp="1581938509182">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="673" y="230" key="RollbackChangesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1581938509182" />
-    <state x="371" y="151" key="SettingsEditor" timestamp="1581763661508">
+    <state x="973" y="185" key="SettingsEditor" timestamp="1587038985064">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="371" y="151" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1581763661508" />
-    <state x="432" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584340940345">
+    <state x="973" y="185" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1587038985064" />
+    <state x="432" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584341940526">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1584340940345" />
+    <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1584341940526" />
     <state x="510" y="133" width="661" height="774" key="find.popup" timestamp="1581765869926">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

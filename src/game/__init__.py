@@ -88,7 +88,7 @@ p = create(
     Rotated(0),
     Navigated(asteroid1),
     Durable(5e7),
-    DefaultDataCollector('assets/texts/ui/default_data_collector.json', 'russian')
+    DefaultDataCollector('assets/texts/ui/default_data_collector.json', 'english')
 )
 
 display.player = p
