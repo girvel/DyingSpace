@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/nik/PycharmProjects/DyingSpace/venv"
+set -gx VIRTUAL_ENV "/media/nik/865ED0925ED07C7D/projects/DyingSpace/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
