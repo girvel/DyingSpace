@@ -22,6 +22,7 @@ from src.systems.physics.constant_holder import ConstantHolder
 from src.systems.physics.durability.durable import Durable
 from src.systems.physics.gravity.massive import Massive
 from src.systems.physics.inertion.movable import Movable
+from src.systems.physics.mounting.mounted import Mounted
 from src.systems.physics.positioned import Positioned
 from src.systems.physics.rotated import Rotated
 from src.systems.physics.traction.tractor import Tractor
@@ -76,7 +77,7 @@ create(ConstantHolder(G=1e-3))
 # Player
 
 p = create(
-    ImageSprite("drilling_ship"),
+    ImageSprite("Drilling ship"),
     Positioned(Vector(8000, 6000)),
     Movable(),
     Massive(1e4),
@@ -88,7 +89,16 @@ p = create(
     Rotated(0),
     Navigated(asteroid1),
     Durable(5e7),
-    DefaultDataCollector('assets/texts/ui/default_data_collector.json', 'russian')
+    DefaultDataCollector('assets/texts/ui/default_data_collector.json', 'russian'),
+)
+
+gun = create(
+    ImageSprite("Gauss gun"),
+    Movable(),
+    Massive(50),
+    Mounted(p, Vector(2, -20), 50 * 100),
+    Rotated(0),
+    CircleCollider(4)
 )
 
 display.player = p
