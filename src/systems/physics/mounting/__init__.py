@@ -6,13 +6,14 @@ def mount(mounted):
     if not mounted.mounting_object:
         return
 
-    if mounted.mounting_force < abs(mounted.velocity - mounted.mounting_object.velocity) / delta_time() * mounted.mass:
-        mounted.mounting_object = None
-        return
+    # if mounted.mounting_force < abs(mounted.velocity - mounted.mounting_object.velocity) * mounted.mass / delta_time():
+    #     print('Mounting break with force', abs(mounted.velocity - mounted.mounting_object.velocity) * mounted.mass / delta_time())
+    #     mounted.mounting_object = None
+    #     return
 
-    mounted.velocity = mounted.mounting_object.velocity
+    mounted.position = mounted.mounting_object.position + mounted.mounting_offset.rotated(mounted.mounting_object.rotation)
 
 
 mounting = (
-    ("mounted" | has('mounting_object') & has('velocity') & has('mounting_force') & has('mass')) >> mount,
+    ("mounted" | has('mounting_object') & has('mounting_force')) >> mount,
 )

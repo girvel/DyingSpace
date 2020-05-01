@@ -5,9 +5,9 @@ from src.systems.physics.mounting import mounting
 from src.systems.physics.traction import traction
 
 physics = (
-    *mounting,
-    *inertia,
     *gravity,
     *traction,
     *collision,
+    *mounting,
+    *inertia,
 )

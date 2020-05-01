@@ -4,6 +4,7 @@ from tkinter import Tk, Canvas, BOTH
 from PIL import ImageTk
 
 from src.ecs.tools import flag
+from src.tools.vector import Vector
 
 
 class TkWindow:
@@ -95,3 +96,8 @@ class TkWindow:
     def bind_action(self, key, action):
         self.window_root.bind(key, action)
 
+    def get_mouse_position(self):
+        return Vector(
+            self.window_root.winfo_pointerx() - self.window_root.winfo_rootx(),
+            self.window_root.winfo_pointery()- self.window_root.winfo_rooty()
+        ) + self.camera.position

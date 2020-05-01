@@ -1,4 +1,4 @@
-from math import cos, sin, pi
+from math import cos, sin, pi, asin, copysign, acos
 
 
 class Vector:
@@ -67,6 +67,9 @@ class Vector:
         return Vector(
             self.x * cs - self.y * sn,
             self.x * sn + self.y * cs)
+
+    def angle(self):
+        return copysign(acos(self.x / abs(self)), asin(self.y / abs(self)))
 
     def __repr__(self):
         return f'{{{round(self.x, 2)}; {round(self.y, 2)}}}'

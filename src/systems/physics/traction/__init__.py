@@ -4,6 +4,7 @@ from src.ecs.requirements.has import has
 
 def apply_force(tractor):
     if tractor.traction_enabled:
+        print('Traction enabled')
         tractor.velocity += \
             tractor.traction_direction.rotated(
                 tractor.rotation

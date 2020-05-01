@@ -1,4 +1,4 @@
-from math import pi
+from math import pi, degrees
 
 from src.ecs.clocks import Clocks, delta_time
 from src.game.default_data_collector import DefaultDataCollector
@@ -53,7 +53,7 @@ camera = create(
 )
 
 display = create(
-    TkWindow("Dying space", Vector(1024, 768), camera),
+    TkWindow("Dying space", Vector(1280, 720), camera),
     PlayerUi(None)
 )
 
@@ -96,9 +96,8 @@ gun = create(
     ImageSprite("Gauss gun"),
     Movable(),
     Massive(50),
-    Mounted(p, Vector(2, -20), 50 * 100),
-    Rotated(0),
-    CircleCollider(4)
+    Mounted(p, Vector(-4, -20), float('inf')),
+    Rotated(0)
 )
 
 display.player = p
@@ -113,7 +112,12 @@ def rotate(dir):
     p.rotation += dir * pi * delta_time()
 
 
+def update_gun_rotation():
+    gun.rotation = (display.get_mouse_position() - gun.position).angle()
+
+
 display.bind_action('w', lambda e: traction_set(True))
 display.bind_action('s', lambda e: traction_set(False))
 display.bind_action('a', lambda e: rotate(-1))
 display.bind_action('d', lambda e: rotate(1))
+display.bind_action('<Motion>', lambda e: update_gun_rotation())
