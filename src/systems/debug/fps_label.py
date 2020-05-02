@@ -1,6 +1,6 @@
 from tkinter import Label
 
-from src.ecs.clocks import delta_time
+from src.ecs.clocks import Clocks
 
 
 class FpsLabel:
@@ -12,4 +12,4 @@ class FpsLabel:
         return '{FpsLabel}'
 
     def update_fps(self):
-        self.fps_label.configure(text=str(round(1 / delta_time(), 2)))
+        self.fps_label.configure(text=str(round(Clocks.current_ups, 2)))

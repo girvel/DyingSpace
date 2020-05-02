@@ -22,7 +22,6 @@ from src.systems.graphics import graphics
 from src.systems.graphics.sprites.image_sprite import ImageSprite
 from src.systems.physics.collision.circle_collider import CircleCollider
 from src.systems.physics.collision.collider import Collider
-from src.systems.physics.constant_holder import ConstantHolder
 from src.systems.physics.durability.durable import Durable
 from src.systems.physics.gravity.massive import Massive
 from src.systems.physics.inertion.movable import Movable
@@ -33,17 +32,18 @@ from src.systems.physics.traction.tractor import Tractor
 from src.tools.vector import Vector
 
 
-DEBUG = False
+DEBUG = True
 
 # Clocks initialization
 
 clocks = Clocks(
+    DEBUG,
     physics,
     gameplay,
     graphics,
     *(() if not DEBUG else (
         fps_monitor,
-    ))
+    )),
 )
 
 create = generate_create_function(clocks)
@@ -76,7 +76,10 @@ asteroid1 = create(
     *asteroid("A001-01: snowball", Vector(0, 0), 300, 1e8),
 )
 
-create(ConstantHolder(G=1e-3))
+create(Union().where(
+    G=1e-3,
+    g_min=1e-1,
+))
 
 
 # Player
