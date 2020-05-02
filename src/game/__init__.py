@@ -1,11 +1,14 @@
-from math import pi, degrees
+from math import pi
 
 from src.ecs.clocks import Clocks, delta_time
+from src.ecs.union import Union
 from src.game.default_data_collector import DefaultDataCollector
 from src.game.fast_functions import generate_create_function
 from src.systems.debug.fps_label import FpsLabel
 from src.ecs.special_entities.named import Named
+from src.systems.gameplay import gameplay
 from src.systems.gameplay.navigation.navigated import Navigated
+from src.systems.gameplay.shooting.shooter import Shooter
 from src.systems.graphics.animation import Animation
 from src.systems.graphics.animation.animated import Animated
 from src.systems.graphics.camera import Camera
@@ -18,6 +21,7 @@ from src.systems.debug.fps_monitor import fps_monitor
 from src.systems.graphics import graphics
 from src.systems.graphics.sprites.image_sprite import ImageSprite
 from src.systems.physics.collision.circle_collider import CircleCollider
+from src.systems.physics.collision.collider import Collider
 from src.systems.physics.constant_holder import ConstantHolder
 from src.systems.physics.durability.durable import Durable
 from src.systems.physics.gravity.massive import Massive
@@ -34,8 +38,9 @@ DEBUG = False
 # Clocks initialization
 
 clocks = Clocks(
-    graphics,
     physics,
+    gameplay,
+    graphics,
     *(() if not DEBUG else (
         fps_monitor,
     ))
@@ -64,7 +69,7 @@ if DEBUG:
 # Game entities
 
 def asteroid(name, position, radius, mass):
-    return Named(name), Positioned(position), CircleSprite(radius), Massive(mass), Movable()
+    return Named(name), Positioned(position), CircleSprite(radius), Massive(mass), Movable(), Collider()
 
 
 asteroid1 = create(
@@ -92,12 +97,19 @@ p = create(
     DefaultDataCollector('assets/texts/ui/default_data_collector.json', 'russian'),
 )
 
+bullet_prototype = Union(
+    CircleSprite(3),
+    # Collider(),
+    Massive(1),
+)
+
 gun = create(
     ImageSprite("Gauss gun"),
     Movable(),
     Massive(50),
     Mounted(p, Vector(-4, -20), float('inf')),
-    Rotated(0)
+    Rotated(0),
+    Shooter(bullet_prototype, 100, Vector(30, 0))
 )
 
 display.player = p
@@ -116,8 +128,13 @@ def update_gun_rotation():
     gun.rotation = (display.get_mouse_position() - gun.position).angle()
 
 
+def shoot():
+    gun.shooting_enabled = True
+
+
 display.bind_action('w', lambda e: traction_set(True))
 display.bind_action('s', lambda e: traction_set(False))
 display.bind_action('a', lambda e: rotate(-1))
 display.bind_action('d', lambda e: rotate(1))
 display.bind_action('<Motion>', lambda e: update_gun_rotation())
+display.bind_action('<Button-1>', lambda e: shoot())

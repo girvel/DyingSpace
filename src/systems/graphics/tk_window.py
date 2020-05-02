@@ -94,7 +94,7 @@ class TkWindow:
         )
 
     def bind_action(self, key, action):
-        self.window_root.bind(key, action)
+        self.canvas.bind(key, action)
 
     def get_mouse_position(self):
         return Vector(

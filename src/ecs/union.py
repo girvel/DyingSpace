@@ -33,5 +33,13 @@ class Union:
 
                 setattr(self, attr_name, attr_value)
 
+    def where(self, **kw):
+        result = Union(self)
+
+        for name, value in kw.items():
+            setattr(result, name, value)
+
+        return result
+
     def __repr__(self):
         return name_of(self)

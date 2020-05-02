@@ -8,6 +8,6 @@ physics = (
     *gravity,
     *traction,
     *collision,
-    *mounting,
     *inertia,
+    *mounting,
 )

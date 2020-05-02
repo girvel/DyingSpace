@@ -1,11 +1,11 @@
 from src.ecs.requirements.has import has
 
-solid = has("radius") & has("position") & has("velocity")
+solid = has("radius") & has("position") & has("velocity") & has("solid")
 destructor_ = has("clocks_destruction_list")
 
 
 def stop_collisions(self, other, destructor):
-    if self is other:
+    if self is other or not self.solid or not other.solid:
         return
 
     delta = other.position - self.position
