@@ -3,6 +3,8 @@ class CircleSprite:
         self.color = color
         self.radius = radius
         self.visible = visible
+        self.sprite_type = "circle"
+        self.display_radius = radius
 
     def __repr__(self):
         return "{{CircleSprite: r={0}{1}}}".format(

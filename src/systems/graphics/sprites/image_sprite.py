@@ -18,6 +18,8 @@ class ImageSprite:
             self.sprite = None
 
         self.sprite_name = name
+        self.sprite_type = "image"
+        self.display_radius = max(*self.sprite.size) if self.sprite else 0
 
     def __repr__(self):
         return "{{ImageSprite: '{0}'{1}}}".format(

@@ -4,6 +4,12 @@ from tkinter import Tk, Canvas, BOTH
 from PIL import ImageTk
 
 from src.ecs.tools import flag
+from src.systems.graphics.sprites.circle_sprite import CircleSprite
+from src.systems.graphics.sprites.image_sprite import ImageSprite
+from src.systems.graphics.sprites.line_sprite import LineSprite
+from src.systems.graphics.sprites.rectangle_sprite import RectangleSprite
+from src.systems.graphics.sprites.text_sprite import TextSprite
+from src.tools.rectangle import Rectangle
 from src.tools.vector import Vector
 
 
@@ -19,6 +25,14 @@ class TkWindow:
         self.canvas.pack(fill=BOTH, expand=1)
 
         self.camera = camera
+        self.display_rectangle = Rectangle(self.camera.position, self.size)
+        self.types_dict = {
+            "image": self.create_image,
+            "circle": self.create_circle,
+            "rectangle": self.create_rectangle,
+            "line": self.create_line,
+            "text": self.create_text,
+        }
 
     def __repr__(self):
         return "{{TkWindow: '{0}', size={1}}}".format(self.title, self.size)
@@ -33,21 +47,16 @@ class TkWindow:
         if not flag(entity, "is_ui"):
             position -= self.camera.position
 
-        for attr, func in {
-            "sprite": self.create_image,
-            "radius": self.create_circle,
-            "is_rectangle": self.create_rectangle,
-            "arrow_type": self.create_line,
-            "text": self.create_text,
-        }.items():
-            if hasattr(entity, attr):
-                func(position, entity)
-                return
+        # if not self.display_rectangle.contains(position, entity.display_radius):
+        #     return
+
+        self.types_dict[entity.sprite_type](position, entity)
 
     def create_image(self, position, entity):
         entity.tkinter_sprite = ImageTk.PhotoImage(
             entity.sprite.rotate(-degrees(entity.rotation), expand=True)
-            if hasattr(entity, "rotation") else entity.sprite
+            if hasattr(entity, "rotation")
+            else entity.sprite
         )
 
         self.canvas.create_image(
@@ -94,7 +103,7 @@ class TkWindow:
         )
 
     def bind_action(self, key, action):
-        self.canvas.bind(key, action)
+        self.window_root.bind(key, action)
 
     def get_mouse_position(self):
         return Vector(

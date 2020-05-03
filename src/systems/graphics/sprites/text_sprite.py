@@ -7,3 +7,5 @@ class TextSprite:
         self.color = color
         self.font = font
         self.text = text
+        self.sprite_type = "text"
+        self.display_radius = 10000

@@ -19,14 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Realize basic shooting">
+    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Add systems time statistics for debugging, disable gravity">
+      <change afterPath="$PROJECT_DIR$/src/tools/rectangle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/clocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/clocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/debug/fps_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/debug/fps_label.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/constant_holder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/gravity/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/line_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/line_sprite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/text_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/text_sprite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -479,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588432029211</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Add systems time statistics for debugging, disable gravity">
+      <created>1588444938903</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1588444938903</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -499,7 +507,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Repaint background, implement rotation, spaceship collider etc" />
     <MESSAGE value="Add ugly camera" />
     <MESSAGE value="Improve default UI" />
     <MESSAGE value="Implement entities dynamic creation &amp; destruction" />
@@ -524,7 +531,8 @@
     <MESSAGE value="Realize mounting, attach gun to a spaceship" />
     <MESSAGE value="Add launch script" />
     <MESSAGE value="Realize basic shooting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Realize basic shooting" />
+    <MESSAGE value="Add systems time statistics for debugging, disable gravity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add systems time statistics for debugging, disable gravity" />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587039194152">
@@ -551,52 +559,52 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="419" y="262" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1587038978653" />
-    <state width="2539" height="253" key="GridCell.Tab.0.bottom" timestamp="1588444717944">
+    <state width="2538" height="304" key="GridCell.Tab.0.bottom" timestamp="1588450672279">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.0.bottom/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588444717944" />
+    <state width="2538" height="304" key="GridCell.Tab.0.bottom/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588450672279" />
     <state width="1345" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277528" />
     <state width="1243" height="171" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.0.center" timestamp="1588444717944">
+    <state width="2538" height="304" key="GridCell.Tab.0.center" timestamp="1588450672278">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.0.center/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588444717944" />
+    <state width="2538" height="304" key="GridCell.Tab.0.center/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588450672278" />
     <state width="1345" height="223" key="GridCell.Tab.0.center/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277527" />
     <state width="1243" height="171" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.0.left" timestamp="1588444717944">
+    <state width="2538" height="304" key="GridCell.Tab.0.left" timestamp="1588450672277">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.0.left/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588444717944" />
+    <state width="2538" height="304" key="GridCell.Tab.0.left/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588450672277" />
     <state width="1345" height="223" key="GridCell.Tab.0.left/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277527" />
     <state width="1243" height="171" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.0.right" timestamp="1588444717944">
+    <state width="2538" height="304" key="GridCell.Tab.0.right" timestamp="1588450672278">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.0.right/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588444717944" />
+    <state width="2538" height="304" key="GridCell.Tab.0.right/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588450672278" />
     <state width="1345" height="223" key="GridCell.Tab.0.right/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277528" />
     <state width="1243" height="171" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.1.bottom" timestamp="1588444717634">
+    <state width="2539" height="253" key="GridCell.Tab.1.bottom" timestamp="1588450672232">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.1.bottom/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588444717634" />
+    <state width="2539" height="253" key="GridCell.Tab.1.bottom/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588450672232" />
     <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277060" />
     <state width="1243" height="171" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902241" />
-    <state width="2539" height="253" key="GridCell.Tab.1.center" timestamp="1588444717633">
+    <state width="2539" height="253" key="GridCell.Tab.1.center" timestamp="1588450672231">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.1.center/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588444717633" />
+    <state width="2539" height="253" key="GridCell.Tab.1.center/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588450672231" />
     <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277059" />
     <state width="1243" height="171" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902241" />
-    <state width="2539" height="253" key="GridCell.Tab.1.left" timestamp="1588444717633">
+    <state width="2539" height="253" key="GridCell.Tab.1.left" timestamp="1588450672231">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.1.left/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588444717633" />
+    <state width="2539" height="253" key="GridCell.Tab.1.left/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588450672231" />
     <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277059" />
     <state width="1243" height="171" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.1.right" timestamp="1588444717634">
+    <state width="2539" height="253" key="GridCell.Tab.1.right" timestamp="1588450672232">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.1.right/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588444717634" />
+    <state width="2539" height="253" key="GridCell.Tab.1.right/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588450672232" />
     <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277060" />
     <state width="1243" height="171" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902241" />
     <state x="595" y="-693" width="386" height="265" key="MultipleFileMergeDialog" timestamp="1588360079504">
@@ -613,10 +621,10 @@
     <state x="117" y="-1056" key="SettingsEditor/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588167677681" />
     <state x="368" y="17" key="SettingsEditor/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167308484" />
     <state x="973" y="185" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1587039179886" />
-    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2" timestamp="1588432033360">
+    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2" timestamp="1588445002884">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588432033360" />
+    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588445002884" />
     <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1587039097465" />
     <state x="510" y="133" width="661" height="774" key="find.popup" timestamp="1581765869926">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -626,9 +634,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="411" y="152" key="git4idea.merge.GitPullDialog/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167234564" />
-    <state x="370" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1588428194287">
+    <state x="370" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1588450120265">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state x="370" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588428194287" />
+    <state x="370" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588450120265" />
   </component>
 </project>
