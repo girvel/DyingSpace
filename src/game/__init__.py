@@ -4,7 +4,7 @@ from src.ecs.clocks import Clocks, delta_time
 from src.ecs.union import Union
 from src.game.default_data_collector import DefaultDataCollector
 from src.game.fast_functions import generate_create_function
-from src.systems.debug.fps_label import FpsLabel
+from src.systems.debug.fps.fps_label import FpsLabel
 from src.ecs.special_entities.named import Named
 from src.systems.gameplay import gameplay
 from src.systems.gameplay.navigation.navigated import Navigated
@@ -17,7 +17,7 @@ from src.systems.graphics.sprites.circle_sprite import CircleSprite
 from src.systems.graphics.tk_window import TkWindow
 from src.systems.graphics.ui.player_ui import PlayerUi
 from src.systems.physics import physics
-from src.systems.debug.fps_monitor import fps_monitor
+from src.systems.debug import debug
 from src.systems.graphics import graphics
 from src.systems.graphics.sprites.image_sprite import ImageSprite
 from src.systems.physics.collision.circle_collider import CircleCollider
@@ -42,7 +42,7 @@ clocks = Clocks(
     gameplay,
     graphics,
     *(() if not DEBUG else (
-        fps_monitor,
+        debug,
     )),
 )
 

@@ -19,15 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Add systems time statistics for debugging, disable gravity">
-      <change afterPath="$PROJECT_DIR$/src/tools/rectangle.py" afterDir="false" />
+    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Tried to make graphics system faster">
+      <change afterPath="$PROJECT_DIR$/src/systems/debug/fps/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/circle_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/image_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/line_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/line_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/rectangle_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/sprites/text_sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/sprites/text_sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/graphics/tk_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/debug/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/debug/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/debug/fps_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/debug/fps/fps_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/debug/fps_monitor.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +73,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\widau\PycharmProjects\DyingSpace\src\systems\debug\fps" />
       <recent name="$PROJECT_DIR$/src/ecs/special_entities" />
       <recent name="$PROJECT_DIR$/src/systems/graphics/sprites" />
       <recent name="$PROJECT_DIR$/src/tools" />
@@ -487,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588444938903</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Tried to make graphics system faster">
+      <created>1588538131802</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1588538131802</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -507,7 +513,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add ugly camera" />
     <MESSAGE value="Improve default UI" />
     <MESSAGE value="Implement entities dynamic creation &amp; destruction" />
     <MESSAGE value="Add destruction by movement energy" />
@@ -532,7 +537,8 @@
     <MESSAGE value="Add launch script" />
     <MESSAGE value="Realize basic shooting" />
     <MESSAGE value="Add systems time statistics for debugging, disable gravity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add systems time statistics for debugging, disable gravity" />
+    <MESSAGE value="Tried to make graphics system faster" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried to make graphics system faster" />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587039194152">
@@ -547,9 +553,10 @@
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
     <state x="437" y="-814" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588443280280" />
-    <state x="643" y="410" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1581765719521">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="70" y="-670" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1588689091875">
+      <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
+    <state x="70" y="-670" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588689091875" />
     <state x="643" y="410" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1581765719521" />
     <state x="710" y="130" key="CommitChangelistDialog2" timestamp="1587039057856">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -621,10 +628,10 @@
     <state x="117" y="-1056" key="SettingsEditor/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588167677681" />
     <state x="368" y="17" key="SettingsEditor/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167308484" />
     <state x="973" y="185" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1587039179886" />
-    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2" timestamp="1588445002884">
+    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2" timestamp="1588545841832">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588445002884" />
+    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588545841832" />
     <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1587039097465" />
     <state x="510" y="133" width="661" height="774" key="find.popup" timestamp="1581765869926">
       <screen x="0" y="0" width="2560" height="1040" />
