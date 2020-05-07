@@ -33,11 +33,13 @@ class Clocks:
         for system in self.__systems:
             for i, pair in enumerate(system):
                 pair.try_add_subject(entity)
+        entity.registered = True
 
     def unregister_entity(self, entity):
         for system in self.__systems:
             for i, pair in enumerate(system):
                 pair.try_remove_subject(entity)
+        entity.registered = False
 
     def update(self):
         if self.debug_mode:

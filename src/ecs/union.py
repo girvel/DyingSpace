@@ -6,10 +6,12 @@ class Union:
         pass
 
     def __init__(self, *components):
+        self.registered = False
+
         for c in components:
             for attr_name in dir(c):
 
-                if attr_name.startswith("__"):
+                if attr_name.startswith("__") or attr_name == 'registered':
                     continue
 
                 attr_value = getattr(c, attr_name)
@@ -18,7 +20,7 @@ class Union:
                     attr_value(self)
                     continue
 
-                if callable(attr_value):
+                if callable(attr_value) and hasattr(type(c), attr_name):
                     setattr(
                         self,
                         attr_name,
@@ -43,3 +45,6 @@ class Union:
 
     def __repr__(self):
         return name_of(self)
+
+    def __bool__(self):
+        return self is not None and self.registered

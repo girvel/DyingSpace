@@ -1,9 +1,11 @@
 from math import pi
+from tkinter import LAST
 
 from src.ecs.clocks import Clocks, delta_time
 from src.ecs.union import Union
 from src.game.default_data_collector import DefaultDataCollector
 from src.game.fast_functions import generate_create_function
+from src.systems.debug.data_display.data_container import DataContainer, debug_container
 from src.systems.debug.fps.fps_label import FpsLabel
 from src.ecs.special_entities.named import Named
 from src.systems.gameplay import gameplay
@@ -14,6 +16,7 @@ from src.systems.graphics.animation.animated import Animated
 from src.systems.graphics.camera import Camera
 from src.systems.graphics.deep import Deep
 from src.systems.graphics.sprites.circle_sprite import CircleSprite
+from src.systems.graphics.sprites.line_sprite import LineSprite
 from src.systems.graphics.tk_window import TkWindow
 from src.systems.graphics.ui.player_ui import PlayerUi
 from src.systems.physics import physics
@@ -61,9 +64,6 @@ display = create(
     TkWindow("Dying space", Vector(1280, 720), camera),
     PlayerUi(None)
 )
-
-if DEBUG:
-    fps_label = create(FpsLabel(display.window_root))
 
 
 # Game entities
@@ -117,6 +117,13 @@ gun = create(
 
 display.player = p
 display.camera.target = p
+
+
+if DEBUG:
+    fps_label = create(FpsLabel(display.window_root))
+
+    player_velocity = create(*debug_container("red", p, lambda e: e.velocity))
+    gun_velocity = create(*debug_container("green", gun, lambda e: e.velocity))
 
 
 def traction_set(value):
