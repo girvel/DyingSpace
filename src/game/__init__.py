@@ -103,7 +103,7 @@ p = create(
 bullet_prototype = Union(
     CircleSprite(3),
     # Collider(),
-    Massive(1),
+    Massive(100),
 )
 
 gun = create(
@@ -112,7 +112,7 @@ gun = create(
     Massive(50),
     Mounted(p, Vector(-4, -20), float('inf')),
     Rotated(0),
-    Shooter(bullet_prototype, 100, Vector(30, 0))
+    Shooter(bullet_prototype, 1000000, Vector(30, 0))
 )
 
 display.player = p

@@ -13,7 +13,8 @@ def mount(mounted):
     #     mounted.mounting_object = None
     #     return
 
-    mounted.velocity = parent.velocity
+    mounted.velocity = (mounted.mass * mounted.velocity + parent.mass * parent.velocity) / (mounted.mass + parent.mass)
+    parent.velocity = mounted.velocity
 
     mounted.position = parent.position + mounted.mounting_offset.rotated(parent.rotation)
 
