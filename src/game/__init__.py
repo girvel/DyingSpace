@@ -9,6 +9,7 @@ from src.systems.debug.data_display.data_container import DataContainer, debug_c
 from src.systems.debug.fps.fps_label import FpsLabel
 from src.ecs.special_entities.named import Named
 from src.systems.gameplay import gameplay
+from src.systems.gameplay.cleaning.temporal import Temporal
 from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.gameplay.shooting.shooter import Shooter
 from src.systems.graphics.animation import Animation
@@ -100,11 +101,8 @@ p = create(
     DefaultDataCollector('assets/texts/ui/default_data_collector.json', 'russian'),
 )
 
-bullet_prototype = Union(
-    CircleSprite(3),
-    # Collider(),
-    Massive(100),
-)
+dummy = create(p)
+dummy.position += Vector(300, 0)
 
 gun = create(
     ImageSprite("Gauss gun"),
@@ -112,7 +110,17 @@ gun = create(
     Massive(50),
     Mounted(p, Vector(-4, -20), float('inf')),
     Rotated(0),
-    Shooter(bullet_prototype, 1000000, Vector(30, 0))
+    Shooter(
+        lambda: Union(
+            CircleSprite(3),
+            Collider(),
+            Massive(100),
+            Durable(1e4),
+            Temporal(60),
+        ),
+        1000,
+        Vector(50, 0)
+    )
 )
 
 display.player = p
@@ -121,9 +129,6 @@ display.camera.target = p
 
 if DEBUG:
     fps_label = create(FpsLabel(display.window_root))
-
-    player_velocity = create(*debug_container("red", p, lambda e: e.velocity))
-    gun_velocity = create(*debug_container("green", gun, lambda e: e.velocity))
 
 
 def traction_set(value):

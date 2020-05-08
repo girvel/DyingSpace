@@ -21,8 +21,14 @@ class Limited:
     def reset_min(self):
         self.value = self.min_value
 
+    def reset_max(self):
+        self.value = self.max_value
+
     def is_max(self):
         return self.value == self.max_value
+
+    def is_min(self):
+        return self.value == self.min_value
 
     def to_proportion(self):
         return (self.value - self.min_value) / (self.max_value - self.min_value)

@@ -9,7 +9,8 @@ def stop_collisions(self, other, destructor):
         return
 
     delta = other.position - self.position
-    if delta.squared_magnitude() <= (self.radius + other.radius) ** 2 and self.velocity != other.velocity:
+    d = self.radius + other.radius
+    if delta.x <= d and delta.y <= d and delta.squared_magnitude() <= d ** 2 and self.velocity != other.velocity:
         m = self.mass if hasattr(self, "mass") else 0
         M = other.mass if hasattr(other, "mass") else 0
 

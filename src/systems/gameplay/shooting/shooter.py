@@ -1,6 +1,6 @@
 class Shooter:
-    def __init__(self, bullet_prototype, shooting_energy, shooting_offset):
-        self.bullet_prototype = bullet_prototype
-        self.shooting_energy = shooting_energy
+    def __init__(self, bullet_constructor, shooting_velocity, shooting_offset):
+        self.bullet_constructor = bullet_constructor
+        self.shooting_velocity = shooting_velocity
         self.shooting_offset = shooting_offset
         self.shooting_enabled = False
