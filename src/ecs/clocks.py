@@ -92,4 +92,4 @@ class Clocks:
 
 
 def delta_time():
-    return 1 / Clocks.ups
+    return 1 / Clocks.current_ups

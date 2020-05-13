@@ -1,6 +1,6 @@
 from src.ecs.requirements.has import has
 
-solid = has("radius") & has("position") & has("velocity") & has("solid")
+solid = has("radius") & has("solid")
 destructor_ = has("clocks_destruction_list")
 
 
@@ -10,28 +10,42 @@ def stop_collisions(self, other, destructor):
 
     delta = other.position - self.position
     d = self.radius + other.radius
-    if delta.x <= d and delta.y <= d and delta.squared_magnitude() <= d ** 2 and self.velocity != other.velocity:
-        m = self.mass if hasattr(self, "mass") else 0
-        M = other.mass if hasattr(other, "mass") else 0
+    if delta.x <= d \
+            and delta.y <= d \
+            and delta.squared_magnitude() <= d ** 2 \
+            and self.velocity.scalar_project(delta) > other.velocity.scalar_project(delta):
+        m1 = self.mass if hasattr(self, "mass") else 0
+        m2 = other.mass if hasattr(other, "mass") else 0
+        k = (1 + (self.resilience_k + other.resilience_k) / 2) / (m1 + m2)
 
-        result_velocity = (m * self.velocity + M * other.velocity) / (m + M)
+        v1 = self.velocity.project(delta)
+        v2 = other.velocity.project(delta)
 
-        e_before = self.mass * self.velocity ** 2 / 2 + other.mass * other.velocity ** 2 / 2
-        e_after = (self.mass + other.mass) * result_velocity ** 2 / 2
+        # result_velocity = (m * self.velocity + M * other.velocity) / (m + M)
+        # self.velocity ==
+        #
+        # e_before = self.mass * self.velocity ** 2 / 2 + other.mass * other.velocity ** 2 / 2
+        # e_after = (self.mass + other.mass) * result_velocity ** 2 / 2
+        #
+        # de = (e_before - e_after) / 2
+        # print(f'energy is {de}')
+        #
 
-        de = (e_before - e_after) / 2
-        print(f'energy is {de}')
+        dv1 = k * m2 * (v2 - v1)
+        dv2 = k * m1 * (v1 - v2)
+
+        self.velocity += dv1
+        other.velocity += dv2
 
         if hasattr(self, "durability"):
-            if de >= self.durability:
+            if m1 * dv1**2 >= 2 * self.durability:
                 destructor.clocks_destruction_list.append(self)
+            print(m1 * dv1**2 / 2)
 
         if hasattr(other, "durability"):
-            if de >= other.durability:
+            if m2 * dv2**2 >= 2 * other.durability:
                 destructor.clocks_destruction_list.append(other)
-
-        self.velocity = result_velocity
-        other.velocity = result_velocity
+            print(m2 * dv2**2 / 2)
 
 
 collision = (

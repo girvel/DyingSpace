@@ -70,7 +70,7 @@ display = create(
 # Game entities
 
 def asteroid(name, position, radius, mass):
-    return Named(name), Positioned(position), CircleSprite(radius), Massive(mass), Movable(), Collider()
+    return Named(name), Positioned(position), CircleSprite(radius), Massive(mass), Movable(), Collider(resilience_k=0.3)
 
 
 asteroid1 = create(
@@ -87,22 +87,19 @@ create(Union().where(
 
 p = create(
     ImageSprite("Drilling ship"),
-    Positioned(Vector(8000, 6000)),
+    Positioned(Vector(800, 600)),
     Movable(),
     Massive(1e4),
     Tractor(Vector(0, -1), 1e5),
-    CircleCollider(25),
+    CircleCollider(25, resilience_k=0.7),
     Animated(
         {(lambda self: self.traction_enabled): Animation("drilling_ship/movement", 1.5, 9)}
     ),
     Rotated(0),
     Navigated(asteroid1),
-    Durable(5e7),
+    Durable(1.25e8),
     DefaultDataCollector('assets/texts/ui/default_data_collector.json', 'russian'),
 )
-
-dummy = create(p)
-dummy.position += Vector(300, 0)
 
 gun = create(
     ImageSprite("Gauss gun"),
@@ -113,8 +110,8 @@ gun = create(
     Shooter(
         lambda: Union(
             CircleSprite(3),
-            Collider(),
-            Massive(100),
+            Collider(resilience_k=0.8),
+            Massive(10),
             Durable(1e4),
             Temporal(60),
         ),

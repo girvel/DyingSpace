@@ -58,7 +58,10 @@ class Vector:
         return Vector(self.y, self.x)
 
     def project(self, other):
-        return self * other / abs(other) * other ** 0
+        return self * other / other.squared_magnitude() * other
+
+    def scalar_project(self, other):
+        return self * other / abs(other)
 
     def rotated(self, angle):
         cs = cos(angle)
@@ -69,7 +72,10 @@ class Vector:
             self.x * sn + self.y * cs)
 
     def angle(self):
-        return copysign(acos(self.x / abs(self)), asin(self.y / abs(self)))
+        return copysign(
+            acos(self.x / abs(self)),
+            asin(self.y / abs(self))
+        )
 
     def __repr__(self):
         return f'{{{round(self.x, 2)}; {round(self.y, 2)}}}'

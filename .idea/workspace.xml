@@ -19,18 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Implement the momentum conservation for shooting &amp; mounting">
-      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/cleaning/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/systems/gameplay/cleaning/temporal.py" afterDir="false" />
+    <list default="true" id="aaa6d7bc-146b-4bd2-9e36-c720bb21f508" name="Default Changelist" comment="Fixed the momentum conservation for shooting &amp; mounting, add some senseless shit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ecs/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ecs/clocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ecs/clocks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/gameplay/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/gameplay/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/gameplay/shooting/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/gameplay/shooting/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/gameplay/shooting/shooter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/gameplay/shooting/shooter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/systems/physics/positioned.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/positioned.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/limited.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/limited.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/circle_collider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/circle_collider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/systems/physics/collision/collider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/systems/physics/collision/collider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/vector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tools/vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tools/vector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,34 +124,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for union.UnionTests.test_repr_generation" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="DyingSpace" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/ecs" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;union.UnionTests.test_repr_generation&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for union.UnionTests.test_union_combines_methods" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="DyingSpace" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/ecs" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;union.UnionTests.test_union_combines_methods&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for vector.VectorTests.test_angle" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="DyingSpace" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -169,20 +138,48 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for vector.VectorTests.test_project" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="DyingSpace" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;vector.VectorTests.test_project&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for vector.VectorTests.test_scalar_project" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="DyingSpace" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;vector.VectorTests.test_scalar_project&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.counter" />
       <item itemvalue="Python.dying_space (1)" />
-      <item itemvalue="Python tests.Unittests for union.UnionTests.test_repr_generation" />
-      <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_combines_methods" />
       <item itemvalue="Python tests.Unittests for vector.VectorTests.test_angle" />
+      <item itemvalue="Python tests.Unittests for vector.VectorTests.test_project" />
+      <item itemvalue="Python tests.Unittests for vector.VectorTests.test_scalar_project" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.dying_space (1)" />
+        <item itemvalue="Python tests.Unittests for vector.VectorTests.test_scalar_project" />
+        <item itemvalue="Python tests.Unittests for vector.VectorTests.test_project" />
         <item itemvalue="Python tests.Unittests for vector.VectorTests.test_angle" />
         <item itemvalue="Python.counter" />
-        <item itemvalue="Python tests.Unittests for union.UnionTests.test_repr_generation" />
-        <item itemvalue="Python tests.Unittests for union.UnionTests.test_union_combines_methods" />
       </list>
     </recent_temporary>
   </component>
@@ -519,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588932157087</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Fixed the momentum conservation for shooting &amp; mounting, add some senseless shit">
+      <created>1588962090185</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1588962090186</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -539,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Encapsulate tkinter" />
     <MESSAGE value="Refactor UI (a bit)" />
     <MESSAGE value="Add names" />
     <MESSAGE value="Implement background stars" />
@@ -564,7 +567,8 @@
     <MESSAGE value="Refactor debug (a bit)" />
     <MESSAGE value="Implement data displaying for debug mode" />
     <MESSAGE value="Implement the momentum conservation for shooting &amp; mounting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement the momentum conservation for shooting &amp; mounting" />
+    <MESSAGE value="Fixed the momentum conservation for shooting &amp; mounting, add some senseless shit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the momentum conservation for shooting &amp; mounting, add some senseless shit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587039194152">
@@ -596,53 +600,61 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="419" y="262" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1587038978653" />
-    <state width="2539" height="253" key="GridCell.Tab.0.bottom" timestamp="1588951986179">
+    <state width="2539" height="190" key="GridCell.Tab.0.bottom" timestamp="1589370208183">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.0.bottom/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588951986179" />
+    <state width="2539" height="190" key="GridCell.Tab.0.bottom/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1589370208183" />
     <state width="1345" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277528" />
+    <state width="1345" height="253" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588968950890" />
     <state width="1243" height="171" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.0.center" timestamp="1588951986178">
+    <state width="2539" height="190" key="GridCell.Tab.0.center" timestamp="1589370208182">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.0.center/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588951986178" />
+    <state width="2539" height="190" key="GridCell.Tab.0.center/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1589370208182" />
     <state width="1345" height="223" key="GridCell.Tab.0.center/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277527" />
+    <state width="1345" height="253" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588968950890" />
     <state width="1243" height="171" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.0.left" timestamp="1588951986178">
+    <state width="2539" height="190" key="GridCell.Tab.0.left" timestamp="1589370208182">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.0.left/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588951986178" />
+    <state width="2539" height="190" key="GridCell.Tab.0.left/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1589370208181" />
     <state width="1345" height="223" key="GridCell.Tab.0.left/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277527" />
+    <state width="1345" height="253" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588968950889" />
     <state width="1243" height="171" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.0.right" timestamp="1588951986179">
+    <state width="2539" height="190" key="GridCell.Tab.0.right" timestamp="1589370208182">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.0.right/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588951986179" />
+    <state width="2539" height="190" key="GridCell.Tab.0.right/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1589370208182" />
     <state width="1345" height="223" key="GridCell.Tab.0.right/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277528" />
+    <state width="1345" height="253" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588968950890" />
     <state width="1243" height="171" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.1.bottom" timestamp="1588951985948">
+    <state width="2539" height="190" key="GridCell.Tab.1.bottom" timestamp="1589370207805">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.1.bottom/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588951985948" />
+    <state width="2539" height="190" key="GridCell.Tab.1.bottom/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1589370207805" />
     <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277060" />
+    <state width="1345" height="253" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588968950891" />
     <state width="1243" height="171" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902241" />
-    <state width="2539" height="253" key="GridCell.Tab.1.center" timestamp="1588951985947">
+    <state width="2539" height="190" key="GridCell.Tab.1.center" timestamp="1589370207804">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.1.center/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588951985947" />
+    <state width="2539" height="190" key="GridCell.Tab.1.center/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1589370207804" />
     <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277059" />
+    <state width="1345" height="253" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588968950891" />
     <state width="1243" height="171" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902241" />
-    <state width="2539" height="253" key="GridCell.Tab.1.left" timestamp="1588951985947">
+    <state width="2539" height="190" key="GridCell.Tab.1.left" timestamp="1589370207804">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.1.left/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588951985947" />
+    <state width="2539" height="190" key="GridCell.Tab.1.left/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1589370207804" />
     <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277059" />
+    <state width="1345" height="253" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588968950891" />
     <state width="1243" height="171" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902240" />
-    <state width="2539" height="253" key="GridCell.Tab.1.right" timestamp="1588951985948">
+    <state width="2539" height="190" key="GridCell.Tab.1.right" timestamp="1589370207805">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state width="2539" height="253" key="GridCell.Tab.1.right/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588951985948" />
+    <state width="2539" height="190" key="GridCell.Tab.1.right/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1589370207805" />
     <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167277060" />
+    <state width="1345" height="253" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588968950891" />
     <state width="1243" height="171" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1587166902241" />
     <state x="595" y="-693" width="386" height="265" key="MultipleFileMergeDialog" timestamp="1588360079504">
       <screen x="-573" y="-1080" width="2560" height="1040" />
@@ -658,10 +670,10 @@
     <state x="117" y="-1056" key="SettingsEditor/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588167677681" />
     <state x="368" y="17" key="SettingsEditor/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167308484" />
     <state x="973" y="185" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1587039179886" />
-    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2" timestamp="1588934845453">
+    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2" timestamp="1588962689461">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588934845453" />
+    <state x="-141" y="-828" key="Vcs.Push.Dialog.v2/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588962689461" />
     <state x="432" y="252" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1587039097465" />
     <state x="510" y="133" width="661" height="774" key="find.popup" timestamp="1581765869926">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -671,9 +683,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="411" y="152" key="git4idea.merge.GitPullDialog/0.0.1366.728/1366.-769.2560.1040@0.0.1366.728" timestamp="1588167234564" />
-    <state x="370" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1588935716384">
+    <state x="370" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1589370120333">
       <screen x="-573" y="-1080" width="2560" height="1040" />
     </state>
-    <state x="370" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1588935716384" />
+    <state x="370" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/-573.-1080.2560.1040@-573.-1080.2560.1040" timestamp="1589370120333" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="150**2*10000" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
