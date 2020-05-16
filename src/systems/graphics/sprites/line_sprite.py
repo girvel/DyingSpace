@@ -1,7 +1,10 @@
+from src.tools.vector import Vector
+
+
 class LineSprite:
-    def __init__(self, size, color, arrow_type=None, visible=True):
-        self.size = size
-        self.color = color
+    def __init__(self, size=None, color=None, arrow_type=None, visible=True):
+        self.size = size if size else Vector.zero
+        self.color = color if color else "gray"
         self.arrow_type = arrow_type
         self.visible = visible
         self.sprite_type = "line"

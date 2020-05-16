@@ -64,6 +64,9 @@ class Vector:
         return self * other / abs(other)
 
     def rotated(self, angle):
+        if not angle:
+            return self
+
         cs = cos(angle)
         sn = sin(angle)
 

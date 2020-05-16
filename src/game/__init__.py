@@ -1,14 +1,12 @@
 from math import pi
 from tkinter import LAST
 
-from src.ecs.clocks import Clocks, delta_time
+from src.ecs.clocks import delta_time
 from src.ecs.union import Union
+from src.game.clocks import create, DEBUG
 from src.game.default_data_collector import DefaultDataCollector
-from src.game.fast_functions import generate_create_function
-from src.systems.debug.data_display.data_container import DataContainer, debug_container
 from src.systems.debug.fps.fps_label import FpsLabel
 from src.ecs.special_entities.named import Named
-from src.systems.gameplay import gameplay
 from src.systems.gameplay.cleaning.temporal import Temporal
 from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.gameplay.shooting.shooter import Shooter
@@ -17,13 +15,12 @@ from src.systems.graphics.animation.animated import Animated
 from src.systems.graphics.camera import Camera
 from src.systems.graphics.deep import Deep
 from src.systems.graphics.sprites.circle_sprite import CircleSprite
+from src.systems.graphics.sprites.image_sprite import ImageSprite
 from src.systems.graphics.sprites.line_sprite import LineSprite
 from src.systems.graphics.tk_window import TkWindow
+from src.systems.graphics.ui import VECTOR
+from src.systems.graphics.ui.data_container import DataContainer
 from src.systems.graphics.ui.player_ui import PlayerUi
-from src.systems.physics import physics
-from src.systems.debug import debug
-from src.systems.graphics import graphics
-from src.systems.graphics.sprites.image_sprite import ImageSprite
 from src.systems.physics.collision.circle_collider import CircleCollider
 from src.systems.physics.collision.collider import Collider
 from src.systems.physics.durability.durable import Durable
@@ -34,37 +31,6 @@ from src.systems.physics.positioned import Positioned
 from src.systems.physics.rotated import Rotated
 from src.systems.physics.traction.tractor import Tractor
 from src.tools.vector import Vector
-
-
-DEBUG = True
-
-# Clocks initialization
-
-clocks = Clocks(
-    DEBUG,
-    physics,
-    gameplay,
-    graphics,
-    *(() if not DEBUG else (
-        debug,
-    )),
-)
-
-create = generate_create_function(clocks)
-
-
-# UI
-
-camera = create(
-    Camera(None),
-    Positioned(Vector(0, 0)),
-    Deep(1),
-)
-
-display = create(
-    TkWindow("Dying space", Vector(1280, 720), camera),
-    PlayerUi(None)
-)
 
 
 # Game entities
@@ -85,9 +51,9 @@ create(Union().where(
 
 # Player
 
-p = create(
+player = create(
     ImageSprite("Drilling ship"),
-    Positioned(Vector(800, 600)),
+    Positioned(Vector(500, 500)),
     Movable(),
     Massive(1e4),
     Tractor(Vector(0, -1), 1e5),
@@ -105,7 +71,7 @@ gun = create(
     ImageSprite("Gauss gun"),
     Movable(),
     Massive(50),
-    Mounted(p, Vector(-4, -20), float('inf')),
+    Mounted(player, Vector(-4, -20)),
     Rotated(0),
     Shooter(
         lambda: Union(
@@ -116,12 +82,33 @@ gun = create(
             Temporal(60),
         ),
         1000,
-        Vector(50, 0)
-    )
+        Vector(50, 0),
+    ),
 )
 
-display.player = p
-display.camera.target = p
+landing_module = create(
+    Massive(1),
+    Movable(),
+    Mounted(player, Vector(0, 25)),
+    CircleCollider(10, resilience_k=-0.5),
+)
+
+
+# User Interface:
+
+camera = create(
+    Camera(None),
+    Positioned(Vector(0, 0)),
+    Deep(1),
+)
+
+display = create(
+    TkWindow("Dying space", Vector(1280, 720), camera),
+    PlayerUi(None)
+)
+
+display.player = player
+camera.target = player
 
 
 if DEBUG:
@@ -129,11 +116,11 @@ if DEBUG:
 
 
 def traction_set(value):
-    p.traction_enabled = value
+    player.traction_enabled = value
 
 
 def rotate(dir):
-    p.rotation += dir * pi * delta_time()
+    player.rotation += dir * pi * delta_time()
 
 
 def update_gun_rotation():
@@ -150,3 +137,18 @@ display.bind_action('a', lambda e: rotate(-1))
 display.bind_action('d', lambda e: rotate(1))
 display.bind_action('<Motion>', lambda e: update_gun_rotation())
 display.bind_action('<Button-1>', lambda e: shoot())
+
+
+speed_vector = create(
+    DataContainer(lambda: display.player.velocity ** 0 * 60, VECTOR),
+    LineSprite(None, "lightgreen", arrow_type=LAST),
+    Mounted(camera, Vector(80, 80))
+)
+
+target_vector = create(
+    DataContainer(lambda: (display.player.navigation_target.position - display.player.position) ** 0 * 60, VECTOR),
+    LineSprite(None, "red", arrow_type=LAST),
+    Mounted(camera, Vector(80, 80))
+)
+
+

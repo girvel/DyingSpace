@@ -2,6 +2,11 @@ from src.ecs.clocks import delta_time
 from src.ecs.requirements.has import has
 
 
+def are_mounted(first, second):
+    return (hasattr(first, 'mounting_object') and first.mounting_object is second) \
+           or (hasattr(second, 'mounting_object') and second.mounting_object is first)
+
+
 def mount(mounted):
     if not mounted.mounting_object:
         return
@@ -13,10 +18,15 @@ def mount(mounted):
     #     mounted.mounting_object = None
     #     return
 
-    mounted.velocity = (mounted.mass * mounted.velocity + parent.mass * parent.velocity) / (mounted.mass + parent.mass)
-    parent.velocity = mounted.velocity
+    if hasattr(mounted, "mass") and hasattr(parent, "mass"):
+        parent.velocity = (mounted.mass * mounted.velocity + parent.mass * parent.velocity) \
+                          / (mounted.mass + parent.mass)
 
-    mounted.position = parent.position + mounted.mounting_offset.rotated(parent.rotation)
+    if hasattr(parent, "velocity"):
+        mounted.velocity = parent.velocity
+
+    rotation = parent.rotation if hasattr(parent, "rotation") else 0
+    mounted.position = parent.position + mounted.mounting_offset.rotated(rotation)
 
 
 mounting = (
