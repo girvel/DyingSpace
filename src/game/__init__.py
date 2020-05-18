@@ -60,7 +60,14 @@ def create(first, *components):
 # Game entities
 
 def asteroid(name, position, radius, mass):
-    return Named(name), Positioned(position), CircleSprite(radius), Massive(mass), Movable(), Collider(resilience_k=0.3)
+    return (
+        Named(name),
+        Positioned(position),
+        CircleSprite(radius),
+        Massive(mass),
+        Movable(),
+        Collider(resilience_k=0.3),
+    )
 
 
 asteroid1 = create(
@@ -89,6 +96,7 @@ player = create(
     Navigated(asteroid1),
     Durable(1.25e8),
     DefaultDataCollector('assets/texts/ui/default_data_collector.json', 'russian'),
+    MassiveSystem(),
 )
 
 gun = create(
@@ -115,7 +123,8 @@ landing_module = create(
     Massive(1),
     Movable(),
     Mounted(player, Vector(0, 25)),
-    CircleCollider(10, resilience_k=-0.5),
+    CircleSprite(10),
+    Collider(resilience_k=-0.5),
     MassiveSystem(),
 )
 
@@ -130,7 +139,7 @@ camera = create(
 
 display = create(
     TkWindow("Dying space", Vector(1280, 720), camera),
-    PlayerUi(None)
+    PlayerUi(None),
 )
 
 display.player = player

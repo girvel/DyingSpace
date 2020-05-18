@@ -14,8 +14,8 @@ def stop_collisions(self, other, destructor):
             and delta.y <= d \
             and delta.squared_magnitude() <= d ** 2 \
             and self.velocity.scalar_project(delta) > other.velocity.scalar_project(delta):
-        m1 = self.mass if hasattr(self, "mass") else 0
-        m2 = other.mass if hasattr(other, "mass") else 0
+        m1 = self.system_mass if hasattr(self, "system_mass") else self.mass if hasattr(self, "mass") else 0
+        m2 = other.system_mass if hasattr(other, "system_mass") else other.mass if hasattr(other, "mass") else 0
         k = (1 + (self.resilience_k + other.resilience_k) / 2) / (m1 + m2)
 
         v1 = self.velocity.project(delta)

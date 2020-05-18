@@ -18,11 +18,7 @@ def mount(mounted):
     #     mounted.mounting_object = None
     #     return
 
-    if hasattr(mounted, "mass") and hasattr(parent, "mass"):
-        parent.velocity = (mounted.mass * mounted.velocity + parent.mass * parent.velocity) \
-                          / (mounted.mass + parent.mass)
-
-    if hasattr(parent, "velocity"):
+    if hasattr(parent, "velocity") and hasattr(mounted, "velocity"):
         mounted.velocity = parent.velocity
 
     rotation = parent.rotation if hasattr(parent, "rotation") else 0
