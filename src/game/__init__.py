@@ -1,15 +1,17 @@
 from math import pi
-from tkinter import LAST
 
-from src.ecs.clocks import delta_time
+from src.ecs.clocks import delta_time, Clocks
 from src.ecs.union import Union
-from src.game.clocks import create, DEBUG
 from src.game.default_data_collector import DefaultDataCollector
+from src.game.ui_factory import UiFactory
+from src.systems.debug import debug
 from src.systems.debug.fps.fps_label import FpsLabel
 from src.ecs.special_entities.named import Named
+from src.systems.gameplay import gameplay
 from src.systems.gameplay.cleaning.temporal import Temporal
 from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.gameplay.shooting.shooter import Shooter
+from src.systems.graphics import graphics
 from src.systems.graphics.animation import Animation
 from src.systems.graphics.animation.animated import Animated
 from src.systems.graphics.camera import Camera
@@ -18,9 +20,9 @@ from src.systems.graphics.sprites.circle_sprite import CircleSprite
 from src.systems.graphics.sprites.image_sprite import ImageSprite
 from src.systems.graphics.sprites.line_sprite import LineSprite
 from src.systems.graphics.tk_window import TkWindow
-from src.systems.graphics.ui import VECTOR
 from src.systems.graphics.ui.data_container import DataContainer
 from src.systems.graphics.ui.player_ui import PlayerUi
+from src.systems.physics import physics
 from src.systems.physics.collision.circle_collider import CircleCollider
 from src.systems.physics.collision.collider import Collider
 from src.systems.physics.durability.durable import Durable
@@ -33,6 +35,27 @@ from src.systems.physics.traction.tractor import Tractor
 from src.tools.vector import Vector
 
 
+# Clocks
+
+DEBUG = True
+
+clocks = Clocks(
+    DEBUG,
+    physics,
+    gameplay,
+    graphics,
+    *(() if not DEBUG else (
+        debug,
+    )),
+)
+
+
+def create(first, *components):
+    e = Union(first, *components) if components else first
+    clocks.register_entity(e)
+    return e
+
+
 # Game entities
 
 def asteroid(name, position, radius, mass):
@@ -43,7 +66,7 @@ asteroid1 = create(
     *asteroid("A001-01: snowball", Vector(0, 0), 300, 1e8),
 )
 
-create(Union().where(
+create(Union(
     G=1e-3,
     g_min=1e-1,
 ))
@@ -110,7 +133,6 @@ display = create(
 display.player = player
 camera.target = player
 
-
 if DEBUG:
     fps_label = create(FpsLabel(display.window_root))
 
@@ -139,16 +161,25 @@ display.bind_action('<Motion>', lambda e: update_gun_rotation())
 display.bind_action('<Button-1>', lambda e: shoot())
 
 
-speed_vector = create(
-    DataContainer(lambda: display.player.velocity ** 0 * 60, VECTOR),
-    LineSprite(None, "lightgreen", arrow_type=LAST),
-    Mounted(camera, Vector(80, 80))
-)
+# speed_vector = create(
+#     DataContainer(lambda: display.player.velocity ** 0 * 60, VECTOR),
+#     LineSprite(None, "lightgreen", arrow_type=LAST),
+#     Mounted(camera, Vector(80, 80))
+# )
+#
+# target_vector = create(
+#     DataContainer(lambda: (display.player.navigation_target.position - display.player.position) ** 0 * 60, VECTOR),
+#     LineSprite(None, "red", arrow_type=LAST),
+#     Mounted(camera, Vector(80, 80))
+# )
 
-target_vector = create(
-    DataContainer(lambda: (display.player.navigation_target.position - display.player.position) ** 0 * 60, VECTOR),
-    LineSprite(None, "red", arrow_type=LAST),
-    Mounted(camera, Vector(80, 80))
-)
+ui = tuple(UiFactory(
+    ui_position=Vector(20, 20),
+    compass_size=100,
+    blocks_offset=30,
+    text_offset=20,
+    font_name="Consolas 9",
+).produce(display, camera))
 
-
+for e in ui:
+    create(e)

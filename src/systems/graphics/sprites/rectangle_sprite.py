@@ -1,5 +1,6 @@
 class RectangleSprite:
-    def __init__(self, size, border):
+    def __init__(self, size, border, visible=True):
+        self.visible = visible
         self.size = size
         self.color = border
         self.sprite_type = "rectangle"

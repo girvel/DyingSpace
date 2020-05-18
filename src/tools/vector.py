@@ -2,8 +2,6 @@ from math import cos, sin, pi, asin, copysign, acos
 
 
 class Vector:
-    zero, up, down, left, right = [None] * 5
-
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -49,7 +47,7 @@ class Vector:
 
     def __pow__(self, power, modulo=None):
         if power == 0:
-            return self / abs(self) if self != Vector.zero else Vector.zero
+            return self / abs(self) if self != zero else zero
         if power % 2 == 0:
             return abs(self) ** power
         raise Exception
@@ -84,9 +82,10 @@ class Vector:
         return f'{{{round(self.x, 2)}; {round(self.y, 2)}}}'
 
 
-Vector.zero = Vector(0, 0)
+zero = Vector(0, 0)
+one = Vector(1, 1)
 
-Vector.up    = Vector( 0, -1)
-Vector.down  = Vector( 0,  1)
-Vector.right = Vector( 1,  0)
-Vector.left  = Vector(-1,  0)
+up    = Vector( 0, -1)
+down  = Vector( 0,  1)
+right = Vector( 1,  0)
+left  = Vector(-1,  0)

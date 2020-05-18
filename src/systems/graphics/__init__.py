@@ -12,7 +12,7 @@ display = ("display" | has("put"))
 
 def clear(display):
     display.canvas.delete("all")
-    src.game.camera.position = src.game.camera.target.position - display.size / 2
+    display.camera.position = display.camera.target.position - display.size / 2
 
 
 def put(displayable, display):

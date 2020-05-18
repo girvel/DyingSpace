@@ -5,7 +5,7 @@ class Union:
     class Error(Exception):
         pass
 
-    def __init__(self, *components):
+    def __init__(self, *components, **attributes):
         self.registered = False
 
         for c in components:
@@ -35,12 +35,14 @@ class Union:
 
                 setattr(self, attr_name, attr_value)
 
-    def where(self, **kw):
-        result = Union(self)
-        return result.set(**kw)
+        self.set(**attributes)
 
-    def set(self, **kw):
-        for name, value in kw.items():
+    def where(self, **attributes):
+        result = Union(self)
+        return result.set(**attributes)
+
+    def set(self, **attributes):
+        for name, value in attributes.items():
             setattr(self, name, value)
 
         return self

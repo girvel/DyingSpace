@@ -1,5 +1,5 @@
 from src.ecs.requirements.has import has
-from src.tools.vector import Vector
+from src.tools import vector
 
 
 def shoot(gun, creator):
@@ -7,7 +7,7 @@ def shoot(gun, creator):
         gun.shooting_enabled = False
 
         bullet = gun.bullet_constructor()
-        dv = gun.shooting_velocity * Vector.right.rotated(gun.rotation)
+        dv = gun.shooting_velocity * vector.right.rotated(gun.rotation)
         creator.clocks_creation_list.append(bullet.set(
             position=gun.position + gun.shooting_offset.rotated(gun.rotation),
             velocity=gun.velocity + dv,

@@ -15,23 +15,23 @@ class DefaultDataCollector:
 
     def get_vector_data(self):
         return (
-            (self.get_text("speed"), self.velocity / 1000, "lightgreen"),
-            (self.get_text("distance"), distance_vector(self, self.navigation_target) / 1000, "red")
+            (self.get_text("speed"), lambda: self.velocity / 1000, "lightgreen"),
+            (self.get_text("distance"), lambda: distance_vector(self, self.navigation_target) / 1000, "red")
         )
 
     def get_scalar_data(self):
         return (
-            (self.get_text("mass"), self.mass / 1000, "green"),
-            (self.get_text("traction_force"), self.traction_force / 1000, "green"),
-            (self.get_text("durability"), self.durability / 1e6, "green"),
+            (self.get_text("mass"), lambda: self.mass / 1000, "green"),
+            (self.get_text("traction_force"), lambda: self.traction_force / 1000, "green"),
+            (self.get_text("durability"), lambda: self.durability / 1e6, "green"),
         )
 
     def get_string_data(self):
         target = self.navigation_target
         return (
-            (self.get_text("target").format(target.name if hasattr(target, "name") else "<unknown>"), "red"),
+            (lambda: self.get_text("target").format(target.name if hasattr(target, "name") else "<unknown>"), "red"),
             *(
-                (line, "green") for line in self.get_text("guide")
+                ((lambda l: lambda: l)(line), "green") for line in self.get_text("guide")
             )
         )
 
