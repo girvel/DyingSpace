@@ -21,7 +21,7 @@ class DefaultDataCollector:
 
     def get_scalar_data(self):
         return (
-            (self.get_text("mass"), lambda: self.mass / 1000, "green"),
+            (self.get_text("mass"), lambda: self.system_mass / 1000, "green"),
             (self.get_text("traction_force"), lambda: self.traction_force / 1000, "green"),
             (self.get_text("durability"), lambda: self.durability / 1e6, "green"),
         )

@@ -28,6 +28,7 @@ from src.systems.physics.collision.collider import Collider
 from src.systems.physics.durability.durable import Durable
 from src.systems.physics.gravity.massive import Massive
 from src.systems.physics.inertion.movable import Movable
+from src.systems.physics.mounting.massive_system import MassiveSystem
 from src.systems.physics.mounting.mounted import Mounted
 from src.systems.physics.positioned import Positioned
 from src.systems.physics.rotated import Rotated
@@ -107,6 +108,7 @@ gun = create(
         1000,
         Vector(50, 0),
     ),
+    MassiveSystem(),
 )
 
 landing_module = create(
@@ -114,6 +116,7 @@ landing_module = create(
     Movable(),
     Mounted(player, Vector(0, 25)),
     CircleCollider(10, resilience_k=-0.5),
+    MassiveSystem(),
 )
 
 
