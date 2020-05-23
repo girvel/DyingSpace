@@ -33,6 +33,7 @@ from src.systems.physics.mounting.mounted import Mounted
 from src.systems.physics.positioned import Positioned
 from src.systems.physics.rotated import Rotated
 from src.systems.physics.traction.tractor import Tractor
+from src.tools import vector
 from src.tools.vector import Vector
 
 
@@ -123,8 +124,19 @@ landing_module = create(
     Massive(1),
     Movable(),
     Mounted(player, Vector(0, 25)),
-    CircleSprite(10),
-    Collider(resilience_k=-0.5),
+    CircleCollider(10, resilience_k=-0.5),
+    MassiveSystem(),
+)
+
+
+enemy = create(
+    ImageSprite("Turret"),
+    Positioned(player.position + vector.one * 300),
+    Movable(),
+    Massive(1e3),
+    CircleCollider(13, 0.7),
+    Rotated(45),
+    Durable(5e7),
     MassiveSystem(),
 )
 
