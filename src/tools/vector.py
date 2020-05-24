@@ -81,6 +81,9 @@ class Vector:
     def __repr__(self):
         return f'{{{round(self.x, 2)}; {round(self.y, 2)}}}'
 
+    def __bool__(self):
+        return self != zero
+
 
 zero = Vector(0, 0)
 one = Vector(1, 1)

@@ -8,6 +8,7 @@ from src.systems.debug import debug
 from src.systems.debug.fps.fps_label import FpsLabel
 from src.ecs.special_entities.named import Named
 from src.systems.gameplay import gameplay
+from src.systems.gameplay.ai.ai_module import AiModule
 from src.systems.gameplay.cleaning.temporal import Temporal
 from src.systems.gameplay.navigation.navigated import Navigated
 from src.systems.gameplay.shooting.shooter import Shooter
@@ -81,7 +82,31 @@ create(Union(
 ))
 
 
-# Player
+# Player & co
+
+
+def create_gauss_gun(holder, offset, *additional_components):
+    return create(
+        ImageSprite("Gauss gun"),
+        Movable(),
+        Massive(50),
+        Mounted(holder, offset),
+        Rotated(0),
+        Shooter(
+            lambda: Union(
+                CircleSprite(3),
+                Collider(resilience_k=0.8),
+                Massive(10),
+                Durable(1e4),
+                Temporal(60),
+            ),
+            1000,
+            Vector(50, 0),
+        ),
+        MassiveSystem(),
+        *additional_components,
+    )
+
 
 player = create(
     ImageSprite("Drilling ship"),
@@ -100,25 +125,7 @@ player = create(
     MassiveSystem(),
 )
 
-gun = create(
-    ImageSprite("Gauss gun"),
-    Movable(),
-    Massive(50),
-    Mounted(player, Vector(-4, -20)),
-    Rotated(0),
-    Shooter(
-        lambda: Union(
-            CircleSprite(3),
-            Collider(resilience_k=0.8),
-            Massive(10),
-            Durable(1e4),
-            Temporal(60),
-        ),
-        1000,
-        Vector(50, 0),
-    ),
-    MassiveSystem(),
-)
+gun = create_gauss_gun(player, Vector(-4, -20))
 
 landing_module = create(
     Massive(1),
@@ -139,6 +146,8 @@ enemy = create(
     Durable(5e7),
     MassiveSystem(),
 )
+
+enemy_gun = create_gauss_gun(enemy, vector.zero, AiModule(300))
 
 
 # User Interface:

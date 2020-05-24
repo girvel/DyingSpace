@@ -1,4 +1,4 @@
-from src.tools.vector import Vector
+from src.tools import vector
 
 
 class Positioned:
