@@ -1,6 +1,6 @@
 from unittest import TestCase, main
 
-from src.ecs.requirements.cache import _Cache, mul
+from src.ecs.requirements.execution_pair import mul
 from src.ecs.requirements.has import has
 from src.ecs.requirements.execution_pair import ExecutionPair
 from src.ecs.requirements.union import UnionRequirements
@@ -80,23 +80,23 @@ class RequirementsTests(TestCase):
 
     def test_mul(self):
         # arrange
-        c1 = _Cache("1", [1, 2, 3])
-        c2 = _Cache("2", [1])
-        c3 = _Cache("3", [4, 5])
+        c1 = [1, 2, 3]
+        c2 = [1]
+        c3 = [4, 5]
 
         # act
-        subjects = mul(c1, c2, c3)
+        subjects = mul((c1, c2, c3))
 
         # assert
         self.assertListEqual(
-            subjects,
+            list(subjects),
             [
-                {"1": 1, "2": 1, "3": 4},
-                {"1": 1, "2": 1, "3": 5},
-                {"1": 2, "2": 1, "3": 4},
-                {"1": 2, "2": 1, "3": 5},
-                {"1": 3, "2": 1, "3": 4},
-                {"1": 3, "2": 1, "3": 5},
+                (1, 1, 4),
+                (1, 1, 5),
+                (2, 1, 4),
+                (2, 1, 5),
+                (3, 1, 4),
+                (3, 1, 5),
             ]
         )
 
@@ -135,7 +135,7 @@ class RequirementsTests(TestCase):
             {"f": a1, "s": b1},
             {"f": a2, "s": b1},
         ]
-        pair.caches = (
+        pair.subjects = (
             _Cache("f", [a1, a2]),
             _Cache("s", [b1]),
         )

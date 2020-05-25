@@ -4,6 +4,7 @@ from time import time, sleep
 
 from src.ecs.special_entities.creator import Creator
 from src.ecs.special_entities.destruction import Destructor
+from src.ecs.union import Union
 
 
 class Clocks:
@@ -15,8 +16,8 @@ class Clocks:
 
     def __init__(self, debug_mode=False, *systems):
         self.__systems = [] if systems is None else systems
-        self.creator = Creator()
-        self.destructor = Destructor()
+        self.creator = Union(Creator())
+        self.destructor = Union(Destructor())
 
         self.register_entity(self.creator)
         self.register_entity(self.destructor)
@@ -30,12 +31,16 @@ class Clocks:
         return f'{{Clocks: ups={0}, current_ups={1}}}'
 
     def register_entity(self, entity):
+        assert not entity.registered
+
         for system in self.__systems:
             for i, pair in enumerate(system):
                 pair.try_add_subject(entity)
         entity.registered = True
 
     def unregister_entity(self, entity):
+        assert entity.registered
+
         for system in self.__systems:
             for i, pair in enumerate(system):
                 pair.try_remove_subject(entity)

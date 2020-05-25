@@ -54,7 +54,7 @@ clocks = Clocks(
 
 
 def create(first, *components):
-    e = Union(first, *components) if components else first
+    e = first if not components and isinstance(first, Union) else Union(first, *components)
     clocks.register_entity(e)
     return e
 
