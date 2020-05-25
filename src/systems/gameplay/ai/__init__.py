@@ -13,5 +13,5 @@ def shoot_them_all(ai, enemy):
 
 
 ai = (
-    ("ai" | has("flag_ai")) * ("enemy" | has("position") & has("solid")) >> shoot_them_all,
+    ("ai" | has("flag_ai")) * ("enemy" | has("position", "solid")) >> shoot_them_all,
 )

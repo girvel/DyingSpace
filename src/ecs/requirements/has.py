@@ -2,14 +2,14 @@ from src.ecs.requirements.union import UnionRequirements
 
 
 class HasRequirement:
-    def __init__(self, name):
-        self.attribute_name = name
+    def __init__(self, *attributes):
+        self.attributes = attributes
 
     def __repr__(self):
-        return f"has '{self.attribute_name}'"
+        return f"has '{self.attributes}'"
 
     def match(self, o):
-        if not hasattr(o, self.attribute_name):
+        if not all(hasattr(o, a) for a in self.attributes):
             return False
         return True
 
