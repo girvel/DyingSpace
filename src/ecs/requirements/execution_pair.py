@@ -3,6 +3,7 @@ class ExecutionPair:
         self.requirements = requirements
         self.action = action
         self.subjects = tuple([] for _ in self.requirements)
+        self.caches = []
 
     def __repr__(self):
         return f'{{ExecutionPair: {repr(self.requirements)} >> {self.action.__name__}}}'
@@ -16,6 +17,12 @@ class ExecutionPair:
 
             self.subjects[i].append(subject)
 
+            self.caches.extend(mul((
+                *self.subjects[:i],
+                [subject],
+                *self.subjects[i + 1:]
+            )))
+
     def try_remove_subject(self, subject):
         for i, req in enumerate(self.requirements):
             match = req.match(subject)
@@ -25,10 +32,11 @@ class ExecutionPair:
 
             if subject in self.subjects[i]:
                 self.subjects[i].remove(subject)
+                self.caches = [cache for cache in self.caches if all(arg != subject for arg in cache)]
 
     def execute(self):
-        for s in mul(self.subjects):
-            self.action(*s)
+        for c in self.caches:
+            self.action(*c)
 
 
 def mul(lists, i0=0):

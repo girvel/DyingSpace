@@ -1,6 +1,6 @@
 from src.ecs.requirements.has import has
 
-solid = has("radius") & has("solid")
+solid = has("radius", "solid")
 destructor_ = has("clocks_destruction_list")
 
 
